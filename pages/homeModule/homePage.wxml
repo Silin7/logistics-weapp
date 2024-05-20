@@ -1,8 +1,65 @@
-<!--pages/homeModule/homePage.wxml-->
-<van-button type="default" bind:tap="defaultBtn">默认按钮</van-button>
-<van-button type="primary">主要按钮</van-button>
-<van-button type="info">信息按钮</van-button>
-<van-button type="warning">警告按钮</van-button>
-<van-button type="danger">危险按钮</van-button>
-
-<component-choosePicker pickerShow="{{pickerShow}}" pickerTitle="标题" dataList="{{pickerList}}" bind:confirmItem="confirmItem" />
+<view class="homePage">
+  <!-- banner -->
+  <view class="bannerBox">
+    <swiper indicator-dots="{{ false }}" autoplay="{{ false }}" bindchange="swiperChange" style="height: 543rpx;">
+      <block wx:for="{{ swiperList }}" wx:key="index">
+        <swiper-item>
+          <image src="{{ item }}" mode="" class="bannerImage" style="width: 100%; height: 543rpx;" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- banner - dian -->
+    <view class="swiperDianBox frcc">
+      <view wx:for="{{ swiperList.length }}" wx:key="idnex">
+        <view wx:if="{{ swiperCurrent === index }}" class="swiperDianA"></view>
+        <view wx:else class="swiperDianN"></view>
+      </view>
+    </view>
+    <!-- 登录box -->
+    <view class="subBox frac">
+      <view class="subItem" bind:tap="goLoginKhd">
+        <image src="/images/homeModule/homecard1.png" mode="aspectFill" class="cardBgimg" />
+        <view class="subTextBox frcc">
+          <image src="/images/homeModule/homeIcon1.png" mode="aspectFill" style="width: 105rpx; height: 105rpx;" />
+          <view style="margin-left: 10rpx;">
+            <view class="sbuText1">客户端</view>
+            <view class="sbuText2">合作商家登录</view>
+          </view>
+        </view>
+      </view>
+      <view class="dividerShu"></view>
+      <view class="subItem" bind:tap="goLoginWld">
+        <image src="/images/homeModule/homecard2.png" mode="aspectFill" class="cardBgimg" />
+        <view class="subTextBox frcc">
+          <image src="/images/homeModule/homeIcon2.png" mode="aspectFill" style="width: 105rpx; height: 105rpx;" />
+          <view style="margin-left: 10rpx;">
+            <view class="sbuText1">物流端</view>
+            <view class="sbuText2">司机师傅登录</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 广告位 -->
+    <view class="advertisingSpace">
+      <image src="https://www.silin7.cn/WULIU/home1.png" mode="aspectFill" style="width: 100%; height: 100%;" />
+    </view>
+  </view>
+  <!-- 通知公告 -->
+  <view class="noticeBox">
+    <view class="gonggaoTitleBox">
+      <image src="/images/homeModule/gonggao.png" mode="aspectFill" style="width: 170rpx; height: 46rpx;" />
+      <view class="frcc" bind:tap="goNoticeList">
+        <view class="gengduoText">更多</view>
+        <image src="/images/homeModule/homeMore.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <view wx:for="{{ 3 }}" wx:key="index" class="noticeItemBox" bind:tap="goNoticeDetail" data-item="{{ item }}">
+      <view class="noticeItemTitle to1">关注公众号，乘车有优惠！</view>
+      <view class="noticeItemContent to2">动动手指，福利即来!点击查看如何领取优惠券>></view>
+      <view class="noticeItemDate">2024-05-12</view>
+    </view>
+    <!-- <view wx:if="{{ noticeData && noticeData.length === 0 }}">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view> -->
+  </view>
+</view>

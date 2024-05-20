@@ -1,1 +1,148 @@
-/* pages/homeModule/homePage.wxss */
+.homePage {
+  min-height: 100vh;
+  padding-bottom: 10rpx;
+  background-color: #F0F5F9;
+}
+
+.bannerBox {
+  width: 100%;
+  height: 383rpx;
+  background-color: #1446A7;
+}
+
+
+.swiperDianBox {
+  width: 100%;
+  position: absolute;
+  top: 410rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperDianN {
+  margin: 0 5rpx;
+  width: 26rpx;
+  height: 8rpx;
+  background: #B1B1B1;
+  border-radius: 4rpx;
+}
+
+.swiperDianA {
+  margin: 0 5rpx;
+  width: 26rpx;
+  height: 8rpx;
+  background: #fff;
+  border-radius: 4rpx;
+}
+
+.subBox {
+  position: absolute;
+  top: 460rpx;
+  left: 24rpx;
+  height: 195rpx;
+  width: calc(100% - 48rpx);
+}
+
+.subItem {
+  position: relative;
+  width: 340rpx;
+  height: 195rpx;
+}
+
+.cardBgimg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 340rpx;
+  height: 195rpx;
+}
+
+.subTextBox {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 340rpx;
+  height: 195rpx;
+}
+
+.sbuText1 {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #FFFFFF;
+  line-height: 40rpx;
+}
+
+.sbuText2 {
+  margin-top: 10rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 24rpx;
+  opacity: 0.63;
+}
+
+.advertisingSpace {
+  margin: 150rpx 24rpx;
+  width: calc(100% - 48rpx);
+  height: 195rpx;
+  border-radius: 200rpx;
+  overflow: hidden;
+}
+
+.noticeBox {
+  margin-top: 580rpx;
+}
+
+.gonggaoTitleBox {
+  padding: 0 24rpx 50rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.gengduoText {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 30rpx;
+  opacity: 0.5;
+  margin-right: 10rpx;
+}
+
+.noticeItemBox {
+  margin: 0 24rpx 30rpx;
+  padding: 40rpx 30rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.noticeItemTitle {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #000000;
+  line-height: 60rpx;
+}
+
+.noticeItemContent {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #545454;
+  line-height: 60rpx;
+}
+
+.noticeItemDate {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 26rpx;
+  color: #545454;
+  line-height: 60rpx;
+  opacity: 0.6;
+}

@@ -1,86 +1,69 @@
-// pages/homeModule/homePage.js
+import esRequest from '../../utils/esRequest';
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    pickerShow: false,
-    pickerList: [
-      { text: '交通代步', value: '01' } ,
-      { text: '手机数码', value: '02' } ,
-      { text: '家用电器', value: '03' } ,
-      { text: '个护日用', value: '04' } ,
-      { text: '家居家装', value: '05' } ,
-      { text: '母婴用品', value: '06' } ,
-      { text: '文体图书', value: '07' } ,
-      { text: '服饰箱包', value: '08' } ,
-      { text: '其他物品', value: '09' } 
-    ]
+    swiperList: ['https://www.silin7.cn/WULIU/home0.png', 'https://www.silin7.cn/WULIU/home0.png', 'https://www.silin7.cn/WULIU/home0.png'],
+    swiperCurrent: 0,
+    noticeData: []
   },
-  defaultBtn() {
+
+  onLoad: function () {},
+
+  // 切换banner
+  swiperChange: function (e) {
     this.setData({
-      pickerShow: true
+      swiperCurrent: e.detail.current,
     })
-    console.log(this.data.pickerShow);
-  },
-  confirmItem(event) {
-    console.log(event.detail.value);
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  // 页面跳转 - 客户端
+  goLoginKhd: function () {
+    // wx.navigateTo({
+    //   url: '',
+    // })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  // 页面跳转 - 物流端
+  goLoginWld: function () {
+    // wx.navigateTo({
+    //   url: '',
+    // })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  // 信息公示 - 列表
+  getDataFunction: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+    esRequest('apiName', ).then(res => {
+      if (res.code === 401) {
+        this.getDataFunction()
+        return
+      }
+      this.setData({
+        noticeData: res.data
+      })
+      wx.hideLoading()
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: err.msg,
+        icon: 'none'
+      })
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  // 页面跳转 - 公告列表
+  goNoticeList: function () {
+    // wx.navigateTo({
+    //   url: '/pages/noticeModule/noticeList/noticeList?id=' + e.currentTarget.dataset.item.id,
+    // })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  // 页面跳转 - 公告详情
+  goNoticeDetail: function (e) {
+    // wx.navigateTo({
+    //   url: '/pages/noticeModule/noticeDetail/noticeDetail?id=' + e.currentTarget.dataset.item.id,
+    // })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

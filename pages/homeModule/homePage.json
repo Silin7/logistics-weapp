@@ -1,6 +1,4 @@
 {
-  "usingComponents": {
-    "van-button": "@vant/weapp/button/index",
-    "component-choosePicker": "/pages/component/choosePicker/choosePicker"
-  }
+  "navigationBarTitleText": "首页",
+  "usingComponents": {}
 }

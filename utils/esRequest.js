@@ -1,13 +1,17 @@
-import baseURL from "./baseURL"
+import {
+  baseURL
+} from "./baseURL"
 import systemRequest from "./sub-unitRequest/systemRequest"
+
+var reachTimer = null
 
 export default (localObjects, parametersData, parameters) => {
   let globalObjects = Object.assign({}, systemRequest)
   let apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
-    var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
+    var requestURL = baseURL + globalObjects[localObjects].apiName + '/' + parameters
   } else {
-    var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
+    var requestURL = baseURL + globalObjects[localObjects].apiName
   }
   return new Promise((resolve, reject) => {
     wx.request({
@@ -15,10 +19,14 @@ export default (localObjects, parametersData, parameters) => {
       url: requestURL,
       data: parametersData,
       header: {
-        token: wx.getStorageSync('token')
+        Authorization: `Bearer ${wx.getStorageSync('token')}`
       },
       success(res) {
-        resolve(res)
+        if (res.data.code === 200) {
+          resolve(res.data)
+        } else {
+          reject(res.data)
+        }
       },
       fail(err) {
         console.warn('fail' + JSON.stringify(err))
