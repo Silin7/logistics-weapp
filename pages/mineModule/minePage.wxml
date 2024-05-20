@@ -1,10 +1,90 @@
-<!--pages/mineModule/minePage.wxml-->
-<text>pages/mineModule/minePage.wxml</text>
-<van-cell-group>
-  <van-field
-    value="{{ value }}"
-    placeholder="请输入用户名"
-    border="{{ false }}"
-    bind:change="onChange"
-  />
-</van-cell-group>
+<view class="minePage">
+  <view class="bgBox">
+    <image src="https://www.silin7.cn/WULIU/mine0.png" mode="" style="width: 100%; height: 540rpx;" />
+    <!-- 头像 昵称 -->
+    <view class="avatarBox">
+      <view class="avatarBgBox frcc">
+        <image src="https://www.silin7.cn/WULIU/mine1.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" />
+        <!-- <image src="https://www.silin7.cn/WULIU/mine2.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" />
+        <image src="https://www.silin7.cn/WULIU/mine3.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" /> -->
+      </view>
+      <view class="nickName frcc">点击登录</view>
+      <!-- <view class="nickName frcc">郑州宏达钢铁有限公司</view>
+      <view class="nickName frcc">山东速递物流有限公司</view> -->
+    </view>
+  </view>
+  <view class="cardBox">
+    <!-- 待签合同 -->
+    <!-- <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_dqht.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">待签合同</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">请登录</view>
+        <view class="placeholderText">查看</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view> -->
+    <!-- 我的货单 -->
+    <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdhd.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">我的货单</view>
+      </view>
+      <view class="frcc">
+        <!-- <view class="placeholderText">请登录</view> -->
+        <view class="placeholderText">查看</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 荣程货源 -->
+    <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_rchy.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">荣程货源</view>
+      </view>
+      <view class="frcc">
+        <!-- <view class="placeholderText">请登录</view> -->
+        <view class="placeholderText">查看</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 用户须知 -->
+    <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_yhxz.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">用户须知</view>
+      </view>
+      <view class="frcc">
+        <!-- <view class="placeholderText">请登录</view> -->
+        <view class="placeholderText">详情</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 我的资料 -->
+    <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdzl.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">我的资料</view>
+      </view>
+      <view class="frcc">
+        <!-- <view class="placeholderText">请登录</view> -->
+        <view class="placeholderText">查看</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 联系客服 -->
+    <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_lxkf.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">联系客服</view>
+      </view>
+      <view class="frcc">
+        <!-- <view class="placeholderText">请登录</view> -->
+        <view class="placeholderText">点击咨询</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+  </view>
+</view>

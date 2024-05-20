@@ -1,7 +1,7 @@
 .homePage {
   min-height: 100vh;
   padding-bottom: 10rpx;
-  background-color: #F0F5F9;
+  background-color: #F4F8FB;
 }
 
 .bannerBox {

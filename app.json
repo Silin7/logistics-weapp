@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/mineModule/minePage",
     "pages/homeModule/homePage",
-    "pages/testModule/testPage",
-    "pages/mineModule/minePage"
+    "pages/testModule/testPage"
   ],
   "tabBar": {
     "color": "#666666",

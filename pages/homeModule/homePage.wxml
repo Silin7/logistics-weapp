@@ -1,10 +1,10 @@
 <view class="homePage">
   <!-- banner -->
   <view class="bannerBox">
-    <swiper indicator-dots="{{ false }}" autoplay="{{ false }}" bindchange="swiperChange" style="height: 543rpx;">
+    <swiper indicator-dots="{{ false }}" autoplay="{{ false }}" bindchange="swiperChange" style="height: 540rpx;">
       <block wx:for="{{ swiperList }}" wx:key="index">
         <swiper-item>
-          <image src="{{ item }}" mode="" class="bannerImage" style="width: 100%; height: 543rpx;" />
+          <image src="{{ item }}" mode="" class="bannerImage" style="width: 100%; height: 540rpx;" />
         </swiper-item>
       </block>
     </swiper>
