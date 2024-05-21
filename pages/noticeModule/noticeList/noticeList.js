@@ -3,7 +3,6 @@ import esRequest from '../../../utils/esRequest';
 Page({
   data: {
     triggered: true,
-    noticetype: 1,
     reachTimer: null,
     total: 0,
     currentPage: 1,

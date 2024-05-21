@@ -1,2 +1,11 @@
-<!--pages/hetongModule/hetongList/hetongList.wxml-->
-<text>pages/hetongModule/hetongList/hetongList.wxml</text>
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <view class="hetongList">
+    <view wx:for="{{ dataList }}" wx:key="index" class="cardItem">
+      <view class="hthText">合同号：{{ item.hth }}</view>
+      <view class="ppText">产品品牌：{{ item.pp }}</view>
+      <view class="ppText">签订日期：{{ item.date }}</view>
+      <view class="xxBtn frcc">详细 ></view>
+      <view class="qzqrBtn frcc">签字确认</view>
+    </view>
+  </view>
+</scroll-view>
