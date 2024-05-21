@@ -1,0 +1,57 @@
+page {
+  background: #fbfbfb;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+
+.handWriting {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.handRight {
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.handCenter {
+  margin: 0 20rpx;
+  border: 2rpx dashed #e9e9e9;
+  height: 500rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.handTitle {
+  height: 60rpx;
+  color: #666;
+}
+
+.handBtn {
+  height: 100rpx;
+  font-size: 28rpx;
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.delBtn {
+  margin-bottom: 30rpx;
+}
+
+.subBtn {
+  background: #008ef6;
+  color: #fff;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
