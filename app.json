@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/mineModule/minePage",
+    "pages/loginModule/logisticsLogin/logisticsLogin",
+    "pages/loginModule/purchaseLogin/purchaseLogin",
     "pages/homeModule/homePage",
+    "pages/mineModule/minePage",
     "pages/testModule/testPage"
   ],
   "tabBar": {
