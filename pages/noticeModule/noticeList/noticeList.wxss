@@ -1,0 +1,36 @@
+.noticeListPage {
+  padding: 22rpx 20rpx;
+  min-height: 100vh;
+  background-color: #F4F8FB;
+}
+
+.noticeItem {
+  margin-bottom: 20rpx;
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+}
+
+.noticeItemTitle {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #000000;
+  line-height: 60rpx;
+}
+
+.noticeItemContent {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 27rpx;
+  color: #545454;
+  line-height: 60rpx;
+}
+
+.noticeItemDate {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 26rpx;
+  color: #545454;
+  line-height: 60rpx;
+  opacity: 0.6;
+}

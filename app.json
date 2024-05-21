@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/noticeModule/noticeList/noticeList",
+    "pages/noticeModule/noticeDetail/noticeDetail",
     "pages/loginModule/logisticsLogin/logisticsLogin",
     "pages/loginModule/purchaseLogin/purchaseLogin",
     "pages/homeModule/homePage",

@@ -1,0 +1,15 @@
+<view class="noticeDetailPage">
+  <view class="noticeCard">
+    <view class="noticeTitle">
+      {{noticeForm.title}}
+    </view>
+    <view class="frsc">
+      <view class="subText">来源：{{noticeForm.username}}</view>
+      <view class="subText ml20">{{noticeForm.createTime}}</view>
+    </view>
+    <view class="henggang"></view>
+    <view class="richTextBox">
+      <rich-text nodes="{{noticeForm.content}}" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <view class="noticeListPage">
+    <view wx:for="{{ noticeData }}" wx:key="index" class="noticeItem" bind:tap="goNoticeDetail" data-item="{{ item }}">
+      <view class="noticeItemTitle">{{ item.title }}</view>
+      <view class="noticeItemContent">{{ item.content }}</view>
+      <view class="noticeItemDate">{{ item.date }}</view>
+    </view>
+    <view wx:if="{{ noticeData.length === 0 }}" class="nodataBox">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view>
+  </view>
+</scroll-view>
