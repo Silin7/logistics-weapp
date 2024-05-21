@@ -1,2 +1,30 @@
-<!--pages/huoyuanModule/huoyuanList/huoyuanList.wxml-->
-<text>pages/huoyuanModule/huoyuanList/huoyuanList.wxml</text>
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <view class="hetongList">
+    <view wx:for="{{ dataList }}" wx:key="index" class="cardItem">
+      <view class="frbc">
+        <view class="frcc">
+          <view class="placeText">{{ item.startPlace }}</view>
+          <image src="/images/businessModule/hy_jiantou.png" mode="" style="margin: 0 30rpx; width: 50rpx; height: 15rpx;" />
+          <view class="placeText">{{ item.endPlace }}</view>
+        </view>
+        <view class="gxDateText">{{ item.gxDate }}更新</view>
+      </view>
+      <view class="contentBox">
+        <view class="frsc">
+          <image src="/images/businessModule/hy_date.png" mode="" style="margin-right: 10rpx; width: 26rpx; height: 26rpx;" />
+          <view class="contentItem">{{ item.zhDate }}</view>
+        </view>
+        <view class="frsc">
+          <image src="/images/businessModule/hy_box.png" mode="" style="margin-right: 10rpx; width: 26rpx; height: 26rpx;" />
+          <view class="contentItem">{{ item.goods }}</view>
+          <view class="shugang"></view>
+          <view class="contentItem">{{ item.weight }}</view>
+        </view>
+      </view>
+      <view class="frbc mt30">
+        <view class="distanceText">约{{ item.distance }}km</view>
+        <view class="cybjBtn frcc">承运报价</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -15,6 +15,10 @@
   margin-top: 20rpx;
 }
 
+.mt30 {
+  margin-top: 30rpx;
+}
+
 .mb10 {
   margin-bottom: 10rpx;
 }

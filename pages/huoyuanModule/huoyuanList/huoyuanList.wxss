@@ -1,1 +1,75 @@
 /* pages/huoyuanModule/huoyuanList/huoyuanList.wxss */
+.hetongList {
+  min-height: 100vh;
+  padding: 20rpx;
+  background-color: #F4F8FB;
+}
+
+.cardItem {
+  margin-bottom: 20rpx;
+  padding: 40rpx 30rpx;
+  background: #FFFFFF;
+  box-shadow: 3rpx 4rpx 19rpx 5rpx #cde6f3;
+  border-radius: 10rpx;
+}
+
+.placeText {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #1D1D1D;
+  line-height: 32rpx;
+}
+
+.gxDateText {
+  font-family: PingFang SC;
+  font-weight: 400;
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 26rpx;
+}
+
+.contentBox {
+  width: 100%;
+  margin-top: 40rpx;
+  padding: 16rpx 20rpx;
+  min-height: 96rpx;
+  background: linear-gradient(90deg, #F4F6FA, #FFFFFF);
+  border-radius: 12rpx;
+}
+
+.contentItem {
+  height: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #777777;
+  line-height: 38rpx;
+}
+
+.shugang {
+  margin: 0 30rpx;
+  width: 1rpx;
+  height: 24rpx;
+  background-color: #ccc;
+}
+
+.distanceText {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #F88E53;
+  line-height: 32rpx
+}
+
+.cybjBtn {
+  width: 185rpx;
+  height: 66rpx;
+  background: #005DFF;
+  border-radius: 11rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 28rpx;
+}
