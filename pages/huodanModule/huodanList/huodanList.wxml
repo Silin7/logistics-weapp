@@ -1,2 +1,11 @@
-<!--pages/huodanModule/huodanList/huodanList.wxml-->
-<text>pages/huodanModule/huodanList/huodanList.wxml</text>
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <view class="hetongList">
+    <view wx:for="{{ dataList }}" wx:key="index" class="cardItem">
+      <view class="hthText">客户：{{ item.kh }}</view>
+      <view class="ppText">单据编号：{{ item.bh }}</view>
+      <view class="ppText">单据日期：{{ item.date }}</view>
+      <view class="xxBtn frcc">详细 ></view>
+      <view class="qzqrBtn frcc">让收货人签字</view>
+    </view>
+  </view>
+</scroll-view>

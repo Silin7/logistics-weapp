@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/hetongModule/hetongList/hetongList",
     "pages/huodanModule/huodanList/huodanList",
+    "pages/hetongModule/hetongList/hetongList",
     "pages/huoyuanModule/huoyuanList/huoyuanList",
     "pages/noticeModule/noticeList/noticeList",
     "pages/noticeModule/noticeDetail/noticeDetail",
