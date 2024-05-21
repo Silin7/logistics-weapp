@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/signModule/signPage/signPage",
     "pages/signModule/signConfirm/signConfirm",
     "pages/hetongModule/hetongList/hetongList",
     "pages/huodanModule/huodanList/huodanList",
