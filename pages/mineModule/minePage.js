@@ -11,7 +11,7 @@ Page({
 
   },
 
-  onShow() {
+  onShow: function () {
     this.setData({
       isLogin: loginCheck()
     })
