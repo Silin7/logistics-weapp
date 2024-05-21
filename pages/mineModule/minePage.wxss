@@ -46,7 +46,7 @@
   width: calc(100% - 80rpx);
   min-height: 860rpx;
   background: #FFFFFF;
-  box-shadow: 6rpx 6rpx 6rpx #eee;
+  box-shadow: 3rpx 4rpx 19rpx 5rpx #cde6f3;
   border-radius: 53rpx;
 }
 

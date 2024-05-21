@@ -1,0 +1,87 @@
+.signConfirm {
+  padding: 22rpx 20rpx;
+  min-height: 100vh;
+  background-color: #F4F8FB;
+}
+
+.cardBox {
+  padding: 50rpx 30rpx;
+  min-height: 929rpx;
+  background: #FFFFFF;
+  box-shadow: 3rpx 4rpx 19rpx 5rpx #cde6f3;
+  border-radius: 10rpx;
+}
+
+.queryTips {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #757373;
+  line-height: 28rpx;
+}
+
+.henggang1 {
+  margin: 50rpx 0;
+  width: 100%;
+  height: 1rpx;
+  background: #E1E1E1;
+}
+
+.henggang2 {
+  margin: 230rpx 0 50rpx;
+  width: 100%;
+  height: 1rpx;
+  background: #E1E1E1;
+}
+
+.companyLabel {
+  margin-bottom: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #000000;
+  line-height: 28rpx;
+}
+
+.companyNameText {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 38rpx;
+  color: #1352D4;
+  line-height: 38rpx;
+}
+
+.tipsText {
+  margin-left: 6rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #EB2929;
+  line-height: 28rpx;
+}
+
+.qqzBtn {
+  margin: 60rpx auto 0;
+  width: 372rpx;
+  height: 80rpx;
+  background: #26D08A;
+  border-radius: 11rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 28rpx;
+}
+
+.yqzBtn {
+  margin: 30rpx auto 0;
+  width: 372rpx;
+  height: 80rpx;
+  background: #2084FF;
+  border-radius: 11rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  line-height: 28rpx;
+}
