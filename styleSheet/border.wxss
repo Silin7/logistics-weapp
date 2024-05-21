@@ -2,12 +2,15 @@
 .br10 {
   border-radius: 10rpx;
 }
+
 .br20 {
   border-radius: 20rpx;
 }
+
 .br50 {
   border-radius: 50%;
 }
+
 .b1 {
   border: 1rpx solid red;
 }
