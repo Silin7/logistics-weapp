@@ -28,7 +28,30 @@ Page({
     currentChirography: {}, //当前笔迹
     linePrack: [] //划线轨迹 , 生成线条的实际点
   },
-  subCanvas() {
+
+  onLoad: function () {
+    let canvasName = this.data.canvasName
+    let ctx = wx.createCanvasContext(canvasName)
+    this.setData({
+      ctx: ctx
+    })
+    var query = wx.createSelectorQuery();
+    query.select('.handCenter').boundingClientRect(rect => {
+      this.setData({
+        canvasWidth: rect.width,
+        canvasHeight: rect.height
+      })
+    }).exec();
+  },
+
+  // 重写
+  retDraw: function () {
+    this.data.ctx.clearRect(0, 0, 700, 730)
+    this.data.ctx.draw()
+  },
+
+  // 完成
+  subCanvas: function () {
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
@@ -40,6 +63,7 @@ Page({
       }
     })
   },
+
   // 笔迹开始
   uploadScaleStart(e) {
     if (e.type != 'touchstart') return false;
@@ -74,6 +98,7 @@ Page({
     }
     this.pointToLine(currentLine);
   },
+
   // 笔迹移动
   uploadScaleMove(e) {
     if (e.type != 'touchmove') return false;
@@ -127,6 +152,7 @@ Page({
     // })
     this.pointToLine(currentLine);
   },
+
   // 笔迹结束
   uploadScaleEnd(e) {
     if (e.type != 'touchend') return 0;
@@ -171,32 +197,15 @@ Page({
       currentLine: []
     })
   },
-  onLoad() {
-    let canvasName = this.data.canvasName
-    let ctx = wx.createCanvasContext(canvasName)
-    this.setData({
-      ctx: ctx
-    })
-    var query = wx.createSelectorQuery();
-    query.select('.handCenter').boundingClientRect(rect => {
-      this.setData({
-        canvasWidth: rect.width,
-        canvasHeight: rect.height
-      })
-    }).exec();
-  },
-  retDraw() {
-    this.data.ctx.clearRect(0, 0, 700, 730)
-    this.data.ctx.draw()
-  },
 
   //画两点之间的线条；参数为:line，会绘制最近的开始的两个点；
-  pointToLine(line) {
+  pointToLine: function (line) {
     this.calcBethelLine(line);
     return;
   },
+
   //计算插值的方式；
-  calcBethelLine(line) {
+  calcBethelLine: function (line) {
     if (line.length <= 1) {
       line[0].r = this.data.radius;
       return;
@@ -282,13 +291,14 @@ Page({
       currentLine: line
     })
   },
+
   //求两点之间距离
-  distance(a, b) {
+  distance: function (a, b) {
     let x = b.x - a.x;
     let y = b.y - a.y;
     return Math.sqrt(x * x + y * y);
   },
-  ctaCalc(x0, y0, r0, x1, y1, r1, x2, y2, r2) {
+  ctaCalc: function (x0, y0, r0, x1, y1, r1, x2, y2, r2) {
     let a = [],
       vx01, vy01, norm, n_x0, n_y0, vx21, vy21, n_x2, n_y2;
     vx01 = x1 - x0;
@@ -362,7 +372,7 @@ Page({
     }
     return a;
   },
-  bethelDraw(point, is_fill, color) {
+  bethelDraw: function (point, is_fill, color) {
     let ctx = this.data.ctx;
     ctx.beginPath();
     ctx.moveTo(point[0].mx, point[0].my);
@@ -382,7 +392,7 @@ Page({
     }
     ctx.draw(true)
   },
-  selectColorEvent(event) {
+  selectColorEvent: function (event) {
     var color = event.currentTarget.dataset.colorValue;
     var colorSelected = event.currentTarget.dataset.color;
     this.setData({

@@ -1,13 +1,11 @@
-<view class="wrapper">
-  <view class="handRight">
-    <view class="handTitle">手写板</view>
-  </view>
+<view class="wrapperPage">
+  <view class="handTitle">手写板：</view>
   <view class="handCenter">
     <canvas id="handWriting" class="handWriting" disable-scroll="true" bindtouchstart="uploadScaleStart" bindtouchmove="uploadScaleMove" bindtouchend="uploadScaleEnd" bindtap="mouseDown" canvas-id="handWriting">
     </canvas>
   </view>
-  <view class="handBtn">
-    <button catchtap="retDraw" class="delBtn">重写</button>
-    <button catchtap="subCanvas" class="subBtn">完成</button>
+  <view class="handBtn frac">
+    <view class="delBtn frcc" bind:tap="retDraw">重写</view>
+    <view class="subBtn frcc" bind:tap="subCanvas">完成</view>
   </view>
 </view>
