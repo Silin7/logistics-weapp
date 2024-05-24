@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/homeModule/homePage",
+    "pages/mineModule/minePage",
     "pages/signModule/signPage/signPage",
     "pages/signModule/signConfirm/signConfirm",
     "pages/hetongModule/hetongList/hetongList",
@@ -8,10 +10,7 @@
     "pages/noticeModule/noticeList/noticeList",
     "pages/noticeModule/noticeDetail/noticeDetail",
     "pages/loginModule/logisticsLogin/logisticsLogin",
-    "pages/loginModule/purchaseLogin/purchaseLogin",
-    "pages/homeModule/homePage",
-    "pages/mineModule/minePage",
-    "pages/testModule/testPage"
+    "pages/loginModule/purchaseLogin/purchaseLogin"
   ],
   "tabBar": {
     "color": "#666666",
