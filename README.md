@@ -9,4 +9,6 @@
 ### /login status返回false
 ### 文章没分页
 ### 13256605200 企业信息尚未录入，暂不能注册。
-### /driverregister 司机注册没有车牌号字段
+### directorregister 没有验证码字段
+### /driverregister 司机注册没有车牌号字段 验证码字段
+### /uploadimgtoreg 500

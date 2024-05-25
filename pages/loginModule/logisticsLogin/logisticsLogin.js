@@ -1,3 +1,6 @@
+import {
+  baseURL,
+} from "../../../utils/baseURL.js";
 import esRequest from '../../../utils/esRequest';
 
 Page({
@@ -98,11 +101,11 @@ Page({
   blockingUploadFiles: function (tempFilePath) {
     return new Promise((resolve, reject) => {
       wx.uploadFile({
-        url: `${baseURL}/resource/oss/upload/xcx`,
+        url: `${baseURL}/uploadimgtoreg`,
         filePath: tempFilePath,
         name: 'file',
         header: {
-          Authorization: `Bearer ${wx.getStorageSync('token')}`
+          // Authorization: `Bearer ${wx.getStorageSync('token')}`
         },
         success(res) {
           console.log(res);
@@ -113,7 +116,8 @@ Page({
             reject(new Error('upload failed'))
           }
         },
-        fail() {
+        fail(error) {
+          console.log('error', error);
           reject(new Error('upload failed'))
         }
       })
