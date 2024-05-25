@@ -39,16 +39,16 @@ Page({
 
   // 页面跳转 - 客户端
   goLoginKhd: function () {
-    // wx.navigateTo({
-    //   url: '',
-    // })
+    wx.navigateTo({
+      url: '/pages/loginModule/purchaseLogin/purchaseLogin',
+    })
   },
 
   // 页面跳转 - 物流端
   goLoginWld: function () {
-    // wx.navigateTo({
-    //   url: '',
-    // })
+    wx.navigateTo({
+      url: '/pages/loginModule/logisticsLogin/logisticsLogin',
+    })
   },
 
   // 页面跳转 - 公告列表

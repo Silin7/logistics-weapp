@@ -19,6 +19,16 @@ let systemRequest = {
     apiName: '/article',
     name: '文章详细'
   },
+  getphonecode: {
+    apiMethod: 'GET',
+    apiName: '/getphonecode',
+    name: '获取手机验证码（物流司机）'
+  },
+  getcompanyphonecode: {
+    apiMethod: 'GET',
+    apiName: '/getcompanyphonecode',
+    name: '获取手机验证码（企业负责人）'
+  },
 }
 
 module.exports = systemRequest

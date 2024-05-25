@@ -23,10 +23,38 @@ Page({
     })
   },
 
-  // 验证码 - input
-  verificationInput: function (e) {
-    this.setData({
-      verificationCode: e.detail.value
+  // 获取手机验证码（企业负责人）
+  getcompanyphonecodeFunction: function () {
+    if (!this.data.userPhone) {
+      wx.showToast({
+        title: '请输入手机号',
+        icon: 'none'
+      })
+      return
+    }
+    var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+    if (!reg.test(this.data.userPhone)) {
+      wx.showToast({
+        title: '手机号格式错误',
+        icon: 'none'
+      })
+      return
+    }
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.countdownChange()
+    esRequest('getcompanyphonecode', {
+      phone: this.data.userPhone
+    }).then((res) => {
+      console.log(res);
+      wx.hideLoading()
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: err.message,
+        icon: 'none'
+      })
     })
   },
 
@@ -42,6 +70,13 @@ Page({
         clearInterval(this.data.verificationTimer)
       }
     }, 1000)
+  },
+
+  // 验证码 - input
+  verificationInput: function (e) {
+    this.setData({
+      verificationCode: e.detail.value
+    })
   },
 
   // 提交按钮 - 弹出
@@ -78,8 +113,8 @@ Page({
       title: '加载中',
     })
     esRequest('xxx', {
-    userPhone: this.data.userPhone,
-    verificationCode: this.data.verificationCode,
+      userPhone: this.data.userPhone,
+      verificationCode: this.data.verificationCode,
     }).then(res => {
       if (res.code === 401) {
         this.submitRequest()
