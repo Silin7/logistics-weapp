@@ -9,6 +9,16 @@ let systemRequest = {
     apiName: '/portal',
     name: '首页数据'
   },
+  articlelist: {
+    apiMethod: 'GET',
+    apiName: '/articlelist',
+    name: '文章列表页面'
+  },
+  article: {
+    apiMethod: 'GET',
+    apiName: '/article',
+    name: '文章详细'
+  },
 }
 
 module.exports = systemRequest

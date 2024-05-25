@@ -7,31 +7,10 @@ Page({
     total: 0,
     currentPage: 1,
     noticeData: []
-    // {
-    //   title: '关注公众号，乘车有优惠!',
-    //   content: '动动手指，福利即来!点击查看如何领取优惠券>>',
-    //   date: '2024-05-12',
-    // },{
-    //   title: '关注公众号，乘车有优惠!',
-    //   content: '动动手指，福利即来!点击查看如何领取优惠券>>',
-    //   date: '2024-05-12',
-    // },{
-    //   title: '关注公众号，乘车有优惠!',
-    //   content: '动动手指，福利即来!点击查看如何领取优惠券>>',
-    //   date: '2024-05-12',
-    // },{
-    //   title: '关注公众号，乘车有优惠!',
-    //   content: '动动手指，福利即来!点击查看如何领取优惠券>>',
-    //   date: '2024-05-12',
-    // },{
-    //   title: '关注公众号，乘车有优惠!',
-    //   content: '动动手指，福利即来!点击查看如何领取优惠券>>',
-    //   date: '2024-05-12',
-    // }
   },
 
   onLoad: function () {
-    // this.initFunction()
+    this.initFunction()
   },
 
   // 初始化函数
@@ -49,12 +28,12 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('systemPosts', {
+    esRequest('articlelist', {
       page: this.data.currentPage,
     }).then(res => {
-      this.data.noticeData = this.data.noticeData.concat(res.data.data.items)
+      this.data.noticeData = this.data.noticeData.concat(res.data.data)
       this.setData({
-        total: res.data.data.total,
+        // total: res.data.data.total,
         noticeData: this.data.noticeData
       })
       wx.hideLoading();

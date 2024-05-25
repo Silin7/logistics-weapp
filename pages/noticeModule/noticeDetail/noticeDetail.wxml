@@ -4,12 +4,12 @@
       {{noticeForm.title}}
     </view>
     <view class="frsc">
-      <view class="subText">来源：{{noticeForm.username}}</view>
-      <view class="subText ml20">{{noticeForm.createTime}}</view>
+      <view class="subText">来源：{{noticeForm.fromwhere}}</view>
+      <view class="subText ml20">{{noticeForm.created_at}}</view>
     </view>
     <view class="henggang"></view>
     <view class="richTextBox">
-      <rich-text nodes="{{noticeForm.content}}" />
+      <rich-text nodes="{{noticeForm.contents}}" />
     </view>
   </view>
 </view>

@@ -3,8 +3,6 @@ import {
 } from "./baseURL"
 import systemRequest from "./sub-unitRequest/systemRequest"
 
-var reachTimer = null
-
 export default (localObjects, parametersData, parameters) => {
   let globalObjects = Object.assign({}, systemRequest)
   let apiMethod = globalObjects[localObjects].apiMethod

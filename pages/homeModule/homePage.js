@@ -53,15 +53,15 @@ Page({
 
   // 页面跳转 - 公告列表
   goNoticeList: function () {
-    // wx.navigateTo({
-    //   url: '/pages/noticeModule/noticeList/noticeList?id=' + e.currentTarget.dataset.item.id,
-    // })
+    wx.navigateTo({
+      url: '/pages/noticeModule/noticeList/noticeList',
+    })
   },
 
   // 页面跳转 - 公告详情
   goNoticeDetail: function (e) {
-    // wx.navigateTo({
-    //   url: '/pages/noticeModule/noticeDetail/noticeDetail?id=' + e.currentTarget.dataset.item.id,
-    // })
+    wx.navigateTo({
+      url: '/pages/noticeModule/noticeDetail/noticeDetail?id=' + e.currentTarget.dataset.item.id,
+    })
   },
 })
