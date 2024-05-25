@@ -22,7 +22,7 @@ export default (localObjects, parametersData, parameters) => {
         Authorization: `Bearer ${wx.getStorageSync('token')}`
       },
       success(res) {
-        if (res.data.code === 200) {
+        if (res.data) {
           resolve(res.data)
         } else {
           reject(res.data)

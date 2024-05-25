@@ -1,7 +1,7 @@
 let systemRequest = {
-  wx_login: {
-    apiMethod: 'GET',
-    apiName: '/system/wx/login',
+  wxLogin: {
+    apiMethod: 'POST',
+    apiName: '/login',
     name: '微信授权'
   },
 }

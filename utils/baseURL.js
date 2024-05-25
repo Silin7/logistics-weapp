@@ -1,5 +1,5 @@
 const baseConfig = {
-  baseURL: 'http://localhost:3007/fuchengapi'
+  baseURL: 'https://rongcheng.duoqixin.com'
 }
 
 module.exports = baseConfig
