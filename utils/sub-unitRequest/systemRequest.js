@@ -49,6 +49,11 @@ let systemRequest = {
     apiName: '/uploadimg',
     name: '图片上传（用户注册后的上传）'
   },
+  logistics: {
+    apiMethod: 'GET',
+    apiName: '/logistics',
+    name: '荣程货源信息列表'
+  },
 }
 
 module.exports = systemRequest

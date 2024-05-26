@@ -1,38 +1,16 @@
+import esRequest from '../../../utils/esRequest';
+
 Page({
   data: {
     triggered: true,
     reachTimer: null,
     total: 0,
     currentPage: 1,
-    dataList: [{
-      startPlace: '山东 聊城',
-      endPlace: '杭州 富阳',
-      gxDate: '10:56',
-      zhDate: '9月15日上午10：00装货',
-      goods: '可口可乐',
-      weight: '40吨',
-      distance: '1200'
-    }, {
-      startPlace: '山东 聊城',
-      endPlace: '杭州 富阳',
-      gxDate: '10:56',
-      zhDate: '9月15日上午10：00装货',
-      goods: '可口可乐',
-      weight: '40吨',
-      distance: '1200'
-    }, {
-      startPlace: '山东 聊城',
-      endPlace: '杭州 富阳',
-      gxDate: '10:56',
-      zhDate: '9月15日上午10：00装货',
-      goods: '可口可乐',
-      weight: '40吨',
-      distance: '1200'
-    }]
+    dataList: []
   },
 
   onLoad: function () {
-    // this.initFunction()
+    this.initFunction()
   },
 
   // 初始化函数
@@ -50,7 +28,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('systemPosts', {
+    esRequest('logistics', {
       page: this.data.currentPage,
     }).then(res => {
       this.data.dataList = this.data.dataList.concat(res.data.data)

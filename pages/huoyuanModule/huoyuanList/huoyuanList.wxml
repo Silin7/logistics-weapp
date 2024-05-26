@@ -3,22 +3,22 @@
     <view wx:for="{{ dataList }}" wx:key="index" class="cardItem">
       <view class="frbc">
         <view class="frcc">
-          <view class="placeText">{{ item.startPlace }}</view>
+          <view class="placeText">{{ item.address_from }}</view>
           <image src="/images/businessModule/hy_jiantou.png" mode="" style="margin: 0 30rpx; width: 50rpx; height: 15rpx;" />
-          <view class="placeText">{{ item.endPlace }}</view>
+          <view class="placeText">{{ item.address_to }}</view>
         </view>
         <view class="gxDateText">{{ item.gxDate }}更新</view>
       </view>
       <view class="contentBox">
         <view class="frsc">
           <image src="/images/businessModule/hy_date.png" mode="" style="margin-right: 10rpx; width: 26rpx; height: 26rpx;" />
-          <view class="contentItem">{{ item.zhDate }}</view>
+          <view class="contentItem">{{ item.timeforloading }}</view>
         </view>
         <view class="frsc">
           <image src="/images/businessModule/hy_box.png" mode="" style="margin-right: 10rpx; width: 26rpx; height: 26rpx;" />
           <view class="contentItem">{{ item.goods }}</view>
           <view class="shugang"></view>
-          <view class="contentItem">{{ item.weight }}</view>
+          <view class="contentItem">{{ item.weight }}吨</view>
         </view>
       </view>
       <view class="frbc mt30">
