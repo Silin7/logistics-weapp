@@ -33,7 +33,7 @@ Page({
     }).then(res => {
       this.data.noticeData = this.data.noticeData.concat(res.data.data)
       this.setData({
-        // total: res.data.data.total,
+        total: res.data.total,
         noticeData: this.data.noticeData
       })
       wx.hideLoading();

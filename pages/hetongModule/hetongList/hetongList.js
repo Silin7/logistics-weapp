@@ -41,9 +41,9 @@ Page({
     esRequest('systemPosts', {
       page: this.data.currentPage,
     }).then(res => {
-      this.data.dataList = this.data.dataList.concat(res.data.data.items)
+      this.data.dataList = this.data.dataList.concat(res.data.data)
       this.setData({
-        total: res.data.data.total,
+        total: res.data.total,
         dataList: this.data.dataList
       })
       wx.hideLoading();
