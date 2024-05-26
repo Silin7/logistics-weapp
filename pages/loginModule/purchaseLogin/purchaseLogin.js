@@ -3,17 +3,11 @@ import esRequest from '../../../utils/esRequest';
 Page({
   data: {
     userPhone: '',
+    codeFlag: null,
     verificationCode: '',
     verificationTimer: null,
     countdown: 60,
-  },
-
-  onLoad: function () {
-
-  },
-
-  onShow: function () {
-
+    companyName: '',
   },
 
   // 手机号 - input
@@ -47,9 +41,16 @@ Page({
     esRequest('getcompanyphonecode', {
       phone: this.data.userPhone
     }).then((res) => {
-      console.log(res);
+      this.setData({
+        codeFlag: true,
+        verificationCode: res.data.code,
+        companyName: res.data.director.company.name
+      })
       wx.hideLoading()
     }).catch((err) => {
+      this.setData({
+        codeFlag: false,
+      })
       wx.hideLoading()
       wx.showToast({
         title: err.message,
@@ -72,12 +73,12 @@ Page({
     }, 1000)
   },
 
-  // 验证码 - input
-  verificationInput: function (e) {
-    this.setData({
-      verificationCode: e.detail.value
-    })
-  },
+  // // 验证码 - input
+  // verificationInput: function (e) {
+  //   this.setData({
+  //     verificationCode: e.detail.value
+  //   })
+  // },
 
   // 提交按钮 - 弹出
   submitFunction: function () {
@@ -112,14 +113,15 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('xxx', {
-      userPhone: this.data.userPhone,
-      verificationCode: this.data.verificationCode,
+    esRequest('directorregister', {
+      open_id: wx.getStorageSync('open_id'),
+      phone: this.data.userPhone,
     }).then(res => {
       if (res.code === 401) {
         this.submitRequest()
         return
       }
+      console.log('directorregister------->', res);
       wx.hideLoading()
       wx.showToast({
         title: '登录成功'
