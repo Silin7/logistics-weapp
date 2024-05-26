@@ -19,14 +19,14 @@ export default (localObjects, parametersData, parameters) => {
       header: {
         Authorization: `Bearer ${wx.getStorageSync('token')}`
       },
-      success(res) {
+      success: function (res) {
         if (res.data.status) {
           resolve(res.data)
         } else {
           reject(res.data)
         }
       },
-      fail(err) {
+      fail: function (err) {
         console.warn('fail' + JSON.stringify(err))
         reject(err)
       }

@@ -5,7 +5,7 @@ import esRequest from '../../../utils/esRequest';
 
 Page({
   data: {
-    userPhone: '',
+    userPhone: '13256605200',
     verificationCode: '',
     carNumber: '',
     driverLicenseCode: '',
@@ -30,19 +30,49 @@ Page({
     })
   },
 
-  // 验证码 - input
-  verificationInput: function (e) {
-    this.setData({
-      verificationCode: e.detail.value
+  // 获取手机验证码（企业负责人）
+  getcompanyphonecodeFunction: function () {
+    if (!this.data.userPhone) {
+      wx.showToast({
+        title: '请输入手机号',
+        icon: 'none'
+      })
+      return
+    }
+    let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
+    if (!phoneReg.test(this.data.userPhone)) {
+      wx.showToast({
+        title: '手机号格式错误',
+        icon: 'none'
+      })
+      return
+    }
+    wx.showLoading({
+      title: '加载中',
+    })
+    this.countdownChange()
+    esRequest('getphonecode', {
+      phone: this.data.userPhone
+    }).then((res) => {
+      this.setData({
+        verificationCode: res.data.code,
+      })
+      wx.hideLoading()
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: err.message,
+        icon: 'none'
+      })
     })
   },
 
-  // 车牌号 - input
-  carNumberInput: function (e) {
-    this.setData({
-      carNumber: e.detail.value
-    })
-  },
+  // // 验证码 - input
+  // verificationInput: function (e) {
+  //   this.setData({
+  //     verificationCode: e.detail.value
+  //   })
+  // },
 
   // 验证码倒计时
   countdownChange: function () {
@@ -56,6 +86,13 @@ Page({
         clearInterval(this.data.verificationTimer)
       }
     }, 1000)
+  },
+
+  // 车牌号 - input
+  carNumberInput: function (e) {
+    this.setData({
+      carNumber: e.detail.value
+    })
   },
 
   // 选择文件
@@ -72,6 +109,7 @@ Page({
       }
     })
   },
+
   // 上传文件
   uploadFiles: async function (files) {
     files.forEach(async (item) => {
@@ -134,11 +172,34 @@ Page({
       });
       return
     }
+    let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
+    if (!phoneReg.test(this.data.userPhone)) {
+      wx.showToast({
+        title: '手机号格式错误',
+        icon: 'none'
+      })
+      return
+    }
     if (!this.data.verificationCode) {
       wx.showToast({
         title: '请输入验证码',
         icon: 'none'
       });
+      return
+    }
+    if (!this.data.carNumber) {
+      wx.showToast({
+        title: '请输入车牌号',
+        icon: 'none'
+      });
+      return
+    }
+    let carNumReg = /^[京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼川贵云渝藏陕甘青宁新]{1}[ABCDEFGHJKLMNOPQRSTUVWXY]{1}[0-9A-Z]{5}$/u
+    if (!carNumReg.test(this.data.carNumber)) {
+      wx.showToast({
+        title: '车牌号格式错误',
+        icon: 'none'
+      })
       return
     }
     wx.showModal({
@@ -157,9 +218,11 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('xxx', {
-      userPhone: this.data.userPhone,
-      verificationCode: this.data.verificationCode,
+    esRequest('driverregister', {
+      open_id: wx.getStorageSync('open_id'),
+      phone: this.data.userPhone,
+      license_page: 'https://www.silin7.cn/WULIU/loginWlqy.png',
+      license_subpage: 'https://www.silin7.cn/WULIU/logincgs.png',
     }).then(res => {
       if (res.code === 401) {
         this.submitRequest()

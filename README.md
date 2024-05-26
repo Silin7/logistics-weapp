@@ -8,7 +8,7 @@
 
 ### /login 500
 ### /directorregister 500
+### /uploadimgtoreg 500
+### /driverregister 司机注册没有车牌号字段 500
 ### /articlelist 文章列表没分页
 ### /getcompanyphonecode 13256605200 企业信息尚未录入，暂不能注册。
-### /driverregister 司机注册没有车牌号字段
-### /uploadimgtoreg 500
