@@ -10,10 +10,15 @@ App({
             code: res.code,
           }).then(res => {
             wx.setStorageSync('registered', res.data.registered)
-            wx.setStorageSync('open_id', res.data.open_id)
-            wx.setStorageSync('session_key', res.data.session_key)
+            wx.setStorageSync('open_id', res.data.profile.open_id)
+            wx.setStorageSync('token', res.data.token)
           }).catch((error) => {
-            console.error(error);
+            if (!error.status && error.data.token) {
+              wx.setStorageSync('registered', res.data.registered)
+              wx.setStorageSync('open_id', res.data.open_id)
+              wx.setStorageSync('session_key', res.data.session_key)
+              wx.setStorageSync('token', res.data.token)
+            }
           })
         }
       }

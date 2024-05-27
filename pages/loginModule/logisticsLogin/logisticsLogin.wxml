@@ -22,10 +22,12 @@
     <view class="labelText">上传驾驶证</view>
     <view class="frsc">
       <view style="margin-right: 28rpx;" bind:tap="chooseFiles" data-code="01">
-        <image src="https://www.silin7.cn/WULIU/login_jsz0.png" mode="" style="width: 265rpx; height: 168rpx;" />
+        <image wx:if="{{ license_page }}" src="{{ license_page }}" mode="aspectFill" style="width: 265rpx; height: 168rpx;" />
+        <image wx:else src="https://www.silin7.cn/WULIU/login_jsz0.png" mode="aspectFit" style="width: 265rpx; height: 168rpx;" />
       </view>
       <view bind:tap="chooseFiles" data-code="02">
-        <image src="https://www.silin7.cn/WULIU/login_jsz1.png" mode="" style="width: 265rpx; height: 168rpx;" />
+        <image wx:if="{{ license_subpage }}" src="{{ license_subpage }}" mode="aspectFill" style="width: 265rpx; height: 168rpx;" />
+        <image wx:else src="https://www.silin7.cn/WULIU/login_jsz1.png" mode="" style="width: 265rpx; height: 168rpx;" />
       </view>
     </view>
     <view class="submitClass frcc" bind:tap="submitFunction">提交</view>

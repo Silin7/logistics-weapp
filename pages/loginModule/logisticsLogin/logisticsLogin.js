@@ -5,12 +5,12 @@ import esRequest from '../../../utils/esRequest';
 
 Page({
   data: {
-    userPhone: '13256605200',
+    userPhone: '',
     verificationCode: '',
     carNumber: '',
     driverLicenseCode: '',
-    driverLicense01: '',
-    driverLicense02: '',
+    license_page: '',
+    license_subpage: '',
     verificationTimer: null,
     countdown: 60,
   },
@@ -117,12 +117,12 @@ Page({
         let resImg = await this.blockingUploadFiles(item.tempFilePath)
         if (this.data.driverLicenseCode === '01') {
           this.setData({
-            driverLicense01: resImg,
+            license_page: resImg,
           })
         }
         if (this.data.driverLicenseCode === '02') {
           this.setData({
-            driverLicense02: resImg,
+            license_subpage: resImg,
           })
         }
       } catch (error) {
@@ -137,13 +137,14 @@ Page({
 
   // 闭包上传
   blockingUploadFiles: function (tempFilePath) {
+    console.log(tempFilePath);
     return new Promise((resolve, reject) => {
       wx.uploadFile({
         url: `${baseURL}/uploadimgtoreg`,
         filePath: tempFilePath,
-        name: 'file',
+        name: 'filepath',
         header: {
-          // Authorization: `Bearer ${wx.getStorageSync('token')}`
+          Authorization: `Bearer ${wx.getStorageSync('token')}`
         },
         success(res) {
           console.log(res);
@@ -200,6 +201,20 @@ Page({
         title: '车牌号格式错误',
         icon: 'none'
       })
+      return
+    }
+    if (!this.data.license_page) {
+      wx.showToast({
+        title: '请输入驾驶证正本',
+        icon: 'none'
+      });
+      return
+    }
+    if (!this.data.license_subpage) {
+      wx.showToast({
+        title: '请输入驾驶证副页',
+        icon: 'none'
+      });
       return
     }
     wx.showModal({
