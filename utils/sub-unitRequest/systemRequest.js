@@ -4,6 +4,11 @@ let systemRequest = {
     apiName: '/login',
     name: '微信授权'
   },
+  profile: {
+    apiMethod: 'GET',
+    apiName: '/profile',
+    name: '用户登录后获取用户的相关资料'
+  },
   portal: {
     apiMethod: 'GET',
     apiName: '/portal',

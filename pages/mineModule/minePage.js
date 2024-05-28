@@ -1,6 +1,7 @@
 import {
   loginCheck
 } from '../../utils/util'
+import esRequest from '../../utils/esRequest';
 
 Page({
   data: {
@@ -8,7 +9,9 @@ Page({
   },
 
   onLoad() {
-
+    esRequest('profile').then(res => {
+      console.log(res);
+    })
   },
 
   onShow: function () {
