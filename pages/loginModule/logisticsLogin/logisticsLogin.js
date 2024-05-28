@@ -7,7 +7,7 @@ Page({
   data: {
     userPhone: '',
     verificationCode: '',
-    carNumber: '',
+    numberplate: '',
     driverLicenseCode: '',
     license_page: '',
     license_subpage: '',
@@ -91,7 +91,7 @@ Page({
   // 车牌号 - input
   carNumberInput: function (e) {
     this.setData({
-      carNumber: e.detail.value
+      numberplate: e.detail.value
     })
   },
 
@@ -117,12 +117,12 @@ Page({
         let resImg = await this.blockingUploadFiles(item.tempFilePath)
         if (this.data.driverLicenseCode === '01') {
           this.setData({
-            license_page: resImg,
+            license_page: resImg.data.url,
           })
         }
         if (this.data.driverLicenseCode === '02') {
           this.setData({
-            license_subpage: resImg,
+            license_subpage: resImg.data.url,
           })
         }
       } catch (error) {
@@ -137,7 +137,6 @@ Page({
 
   // 闭包上传
   blockingUploadFiles: function (tempFilePath) {
-    console.log(tempFilePath);
     return new Promise((resolve, reject) => {
       wx.uploadFile({
         url: `${baseURL}/uploadimgtoreg`,
@@ -147,9 +146,9 @@ Page({
           Authorization: `Bearer ${wx.getStorageSync('token')}`
         },
         success(res) {
-          console.log(res);
           const data = JSON.parse(res.data)
-          if (data.code === 200) {
+          console.log('data', data);
+          if (data.status) {
             resolve(JSON.parse(res.data))
           } else {
             reject(new Error('upload failed'))
@@ -188,7 +187,7 @@ Page({
       });
       return
     }
-    if (!this.data.carNumber) {
+    if (!this.data.numberplate) {
       wx.showToast({
         title: '请输入车牌号',
         icon: 'none'
@@ -196,7 +195,7 @@ Page({
       return
     }
     let carNumReg = /^[京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼川贵云渝藏陕甘青宁新]{1}[ABCDEFGHJKLMNOPQRSTUVWXY]{1}[0-9A-Z]{5}$/u
-    if (!carNumReg.test(this.data.carNumber)) {
+    if (!carNumReg.test(this.data.numberplate)) {
       wx.showToast({
         title: '车牌号格式错误',
         icon: 'none'
@@ -236,8 +235,9 @@ Page({
     esRequest('driverregister', {
       open_id: wx.getStorageSync('open_id'),
       phone: this.data.userPhone,
-      license_page: 'https://www.silin7.cn/WULIU/loginWlqy.png',
-      license_subpage: 'https://www.silin7.cn/WULIU/logincgs.png',
+      numberplate: this.data.numberplate,
+      license_page: this.data.license_page,
+      license_subpage: this.data.license_subpage,
     }).then(res => {
       if (res.code === 401) {
         this.submitRequest()

@@ -18,7 +18,7 @@
       <view wx:else class="getCodeClass" bind:tap="getcompanyphonecodeFunction">获取验证码</view>
     </view>
     <view class="labelText">录入车牌号</view>
-    <input value="{{ carNumber }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="carNumberInput" />
+    <input value="{{ numberplate }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="carNumberInput" />
     <view class="labelText">上传驾驶证</view>
     <view class="frsc">
       <view style="margin-right: 28rpx;" bind:tap="chooseFiles" data-code="01">
