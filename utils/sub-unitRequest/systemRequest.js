@@ -59,6 +59,11 @@ let systemRequest = {
     apiName: '/logistics',
     name: '荣程货源信息列表'
   },
+  voucherlist: {
+    apiMethod: 'GET',
+    apiName: '/voucherlist',
+    name: '获取用户的合同列表'
+  },
 }
 
 module.exports = systemRequest

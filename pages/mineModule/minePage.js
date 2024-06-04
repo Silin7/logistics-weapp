@@ -6,6 +6,7 @@ import esRequest from '../../utils/esRequest';
 Page({
   data: {
     isLogin: false,
+    profile: {},
   },
 
   onLoad() {

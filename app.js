@@ -16,11 +16,11 @@ App({
               wx.setStorageSync('open_id', res.data.profile.open_id)
             }
           }).catch((error) => {
-            if (!error.status && error.data.token) {
-              wx.setStorageSync('registered', res.data.registered)
-              wx.setStorageSync('open_id', res.data.open_id)
-              wx.setStorageSync('session_key', res.data.session_key)
-              wx.setStorageSync('token', res.data.token)
+            if (error.data && error.data.token) {
+              wx.setStorageSync('registered', error.data.registered)
+              wx.setStorageSync('open_id', error.data.open_id)
+              wx.setStorageSync('session_key', error.data.session_key)
+              wx.setStorageSync('token', error.data.token)
             }
           })
         }

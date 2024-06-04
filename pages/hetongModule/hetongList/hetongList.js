@@ -1,3 +1,5 @@
+import esRequest from '../../../utils/esRequest';
+
 Page({
   data: {
     triggered: true,
@@ -20,7 +22,7 @@ Page({
   },
 
   onLoad: function () {
-    // this.initFunction()
+    this.initFunction()
   },
 
   // 初始化函数
@@ -38,7 +40,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('systemPosts', {
+    esRequest('voucherlist', {
       page: this.data.currentPage,
     }).then(res => {
       this.data.dataList = this.data.dataList.concat(res.data.data)
