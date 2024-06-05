@@ -35,4 +35,12 @@ Page({
     //   url: '/pages/noticeModule/noticeDetail/noticeDetail?id=' + e.currentTarget.dataset.item.id,
     // })
   },
+
+  // 页面跳转 - 签字确认
+  goSignConfirm: function (e) {
+    const item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: `/pages/signModule/signConfirm/signConfirm?id=${item.id}&linkMan=${item.linkMan}&t_company_name=${item.t_company_name}`
+    })
+  }
 })

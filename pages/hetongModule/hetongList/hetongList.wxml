@@ -4,6 +4,6 @@
     <view class="ppText">产品品牌：{{ item.pinpai }}</view>
     <view class="ppText">签订日期：{{ item.voucherDate }}</view>
     <view class="xxBtn frcc">详细 ></view>
-    <view class="qzqrBtn frcc">签字确认</view>
+    <view class="qzqrBtn frcc" bind:tap="goSignConfirm" data-item="{{ item }}">签字确认</view>
   </view>
 </view>
