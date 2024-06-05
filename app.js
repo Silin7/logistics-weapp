@@ -11,8 +11,8 @@ App({
           }).then(res => {
             wx.setStorageSync('registered', res.data.registered)
             wx.setStorageSync('token', res.data.token)
-            wx.setStorageSync('profile', res.data.profile)
             if (res.data.profile) {
+              wx.setStorageSync('profile', res.data.profile)
               wx.setStorageSync('open_id', res.data.profile.open_id)
             }
           }).catch((error) => {
