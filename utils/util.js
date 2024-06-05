@@ -1,9 +1,9 @@
 // 登录校验
 const loginCheck = function () {
-  if (!wx.getStorageSync('isRegister')) {
+  if (!wx.getStorageSync('registered')) {
     return false
   } else {
-    if (!wx.getStorageSync('userInfo')) {
+    if (!wx.getStorageSync('profile')) {
       return false
     } else {
       return true
