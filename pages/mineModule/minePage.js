@@ -1,6 +1,6 @@
-import {
-  loginCheck
-} from '../../utils/util'
+// import {
+//   loginCheck
+// } from '../../utils/util'
 import esRequest from '../../utils/esRequest';
 
 Page({
@@ -9,20 +9,27 @@ Page({
     profile: {},
   },
 
-  onLoad() {
-    esRequest('profile').then(res => {
-      console.log(res);
-    })
+  onShow: function () {
+    // this.setData({
+    //   isLogin: loginCheck(),
+    // })
+    this.getProfile()
   },
 
-  onShow: function () {
-    this.setData({
-      isLogin: loginCheck()
+  // 用户登录后获取用户的相关资料
+  getProfile: function () {
+    esRequest('profile').then(res => {
+      this.setData({
+        profile: res.data.profile
+      })
+      wx.setStorageSync('profile', res.data.profile)
+      wx.hideLoading()
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: err.message,
+        icon: 'none'
+      })
     })
-    // if (this.data.isLogin) {
-    //   this.setData({
-    //     userInfo: wx.getStorageSync('userInfo')
-    //   })
-    // }
-  },
+  }
 })
