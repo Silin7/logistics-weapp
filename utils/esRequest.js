@@ -17,6 +17,7 @@ export default (localObjects, parametersData, parameters) => {
       url: requestURL,
       data: parametersData,
       header: {
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${wx.getStorageSync('token')}`
       },
       success: function (res) {
