@@ -51,6 +51,13 @@ Page({
     })
   },
 
+  // // 页面跳转 - 合同列表
+  // goHetongList: function () {
+  //   wx.navigateTo({
+  //     url: '/pages/hetongModule/hetongList/hetongList',
+  //   })
+  // },
+
   // 页面跳转 - 公告列表
   goNoticeList: function () {
     wx.navigateTo({

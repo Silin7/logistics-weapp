@@ -58,7 +58,7 @@ Page({
       canvasId: 'handWriting',
       success(res) {
         wx.setStorageSync('sign_tmp_file', res.tempFilePath)
-        wx.setStorageSync('have_signed', 1)
+        // wx.setStorageSync('have_signed', 1)
         wx.navigateBack()
       }
     })

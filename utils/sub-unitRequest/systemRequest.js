@@ -64,6 +64,11 @@ let systemRequest = {
     apiName: '/voucherlist',
     name: '获取用户的合同列表'
   },
+  savesign: {
+    apiMethod: 'POST',
+    apiName: '/voucher/savesign',
+    name: '合同签字'
+  }
 }
 
 module.exports = systemRequest
