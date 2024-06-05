@@ -104,7 +104,7 @@ Page({
       mediaType: ['image'],
       sourceType: ['album', 'camera'],
       camera: 'back', // 仅在 sourceType 为 camera 时生效，使用前置或后置摄像头
-      success(res) {
+      success: function (res) {
         _this.uploadFiles(res.tempFiles)
       }
     })
@@ -145,7 +145,7 @@ Page({
         header: {
           Authorization: `Bearer ${wx.getStorageSync('token')}`
         },
-        success(res) {
+        success: function (res) {
           const data = JSON.parse(res.data)
           console.log('data', data);
           if (data.status) {
@@ -154,7 +154,7 @@ Page({
             reject(new Error('upload failed'))
           }
         },
-        fail(error) {
+        fail: function (error) {
           console.log('error', error);
           reject(new Error('upload failed'))
         }
@@ -219,7 +219,7 @@ Page({
     wx.showModal({
       title: '提交',
       content: '确定要提交保存数据吗？',
-      success(res) {
+      success: function (res) {
         if (res.confirm) {
           _this.submitRequest()
         }

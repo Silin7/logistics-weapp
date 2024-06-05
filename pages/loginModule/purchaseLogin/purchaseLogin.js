@@ -100,7 +100,7 @@ Page({
     wx.showModal({
       title: '提交',
       content: '确定要提交保存数据吗？',
-      success(res) {
+      success: function (res) {
         if (res.confirm) {
           _this.submitRequest()
         }
