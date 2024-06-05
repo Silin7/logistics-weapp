@@ -17,6 +17,8 @@
       <view wx:if="{{ countdown < 60 && countdown > 0 }}" class="getCodeClass">获取验证码 ({{ countdown }})</view>
       <view wx:else class="getCodeClass" bind:tap="getcompanyphonecodeFunction">获取验证码</view>
     </view>
+    <view class="labelText">姓名</view>
+    <input value="{{ name }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="nameInput" />
     <view class="labelText">录入车牌号</view>
     <input value="{{ numberplate }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="carNumberInput" />
     <view class="labelText">上传驾驶证</view>

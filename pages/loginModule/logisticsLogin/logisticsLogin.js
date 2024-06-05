@@ -8,6 +8,7 @@ Page({
     userPhone: '',
     verificationCode: '',
     numberplate: '',
+    name: '',
     driverLicenseCode: '',
     license_page: '',
     license_subpage: '',
@@ -27,6 +28,13 @@ Page({
   userPhoneInput: function (e) {
     this.setData({
       userPhone: e.detail.value
+    })
+  },
+
+  // 姓名 - input
+  nameInput: function (e) {
+    this.setData({
+      name: e.detail.value
     })
   },
 
@@ -180,6 +188,13 @@ Page({
       })
       return
     }
+    if (!this.data.name) {
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none'
+      });
+      return
+    }
     if (!this.data.verificationCode) {
       wx.showToast({
         title: '请输入验证码',
@@ -235,6 +250,7 @@ Page({
     esRequest('driverregister', {
       open_id: wx.getStorageSync('open_id'),
       phone: this.data.userPhone,
+      name: this.data.name,
       numberplate: this.data.numberplate,
       license_page: this.data.license_page,
       license_subpage: this.data.license_subpage,
