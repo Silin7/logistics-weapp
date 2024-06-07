@@ -59,7 +59,9 @@ Page({
       success: function (res) {
         wx.setStorageSync('sign_tmp_file', res.tempFilePath)
         // wx.setStorageSync('have_signed', 1)
-        wx.navigateBack()
+        wx.navigateBack({
+          delta: 1
+        })
       }
     })
   },

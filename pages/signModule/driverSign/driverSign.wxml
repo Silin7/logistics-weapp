@@ -1,0 +1,25 @@
+<view class="signConfirm">
+  <view class="cardBox">
+    <view class="queryTips">*请确认以下信息无误再去签名</view>
+    <view class="henggang1"></view>
+    <view class="frsc mt30">
+      <view class="companyLabel">公司名称:</view>
+      <view class="companyNameText">{{ t_company_name }}</view>
+    </view>
+    <view class="frsc mt30">
+      <view class="companyLabel mr10">签字人手机号:</view>
+      <input value="{{ sign_tel }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="signPhoneInput" />
+    </view>
+    <view wx:if="{{sign_tmp_file}}" class="signFile">
+      <image src="{{ sign_tmp_file }}" mode="widthFix" style="width: 100%;" />
+    </view>
+    <view wx:else class="zhanwei"></view>
+    <view class="henggang2"></view>
+    <view class="frsc">
+      <image src="/images/signModule/red_right.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      <view class="tipsText">我声明我的签字具有法律效力</view>
+    </view>
+    <view class="qqzBtn frcc" bind:tap="goSignPage">去签字</view>
+    <view class="yqzBtn frcc" bind:tap="voucherSavesign">已签好 确定提交</view>
+  </view>
+</view>

@@ -2,8 +2,9 @@
   "pages": [
     "pages/homeModule/homePage",
     "pages/mineModule/minePage",
-    "pages/signModule/signPage/signPage",
+    "pages/signModule/driverSign/driverSign",
     "pages/signModule/signConfirm/signConfirm",
+    "pages/signModule/signPage/signPage",
     "pages/hetongModule/hetongList/hetongList",
     "pages/huodanModule/huodanList/huodanList",
     "pages/huoyuanModule/huoyuanList/huoyuanList",
