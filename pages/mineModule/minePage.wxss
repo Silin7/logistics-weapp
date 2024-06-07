@@ -72,3 +72,10 @@
   line-height: 60rpx;
   opacity: 0.5;
 }
+
+.zxkfBtn {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+}

@@ -74,6 +74,7 @@
       <view class="frcc">
         <image src="/images/mineModule/mine_lxkf.png" mode="" style="width: 36rpx; height: 36rpx;" />
         <view class="titleText">联系客服</view>
+        <button wx:if="{{ isLogin }}" open-type="contact" class="zxkfBtn">咨询客服</button>
       </view>
       <view class="frcc">
         <view wx:if="{{ !isLogin }}" class="placeholderText">请登录</view>
