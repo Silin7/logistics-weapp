@@ -10,11 +10,12 @@
       </view>
       <view wx:if="{{ !isLogin}}" class="nickName frcc" bind:tap="goLogin">点击登录</view>
       <view wx:if="{{ isLogin && profile.role === 1 }}" class="nickName frcc">{{ profile.screen_name }}</view>
+      <view wx:if="{{ isLogin && profile.role === 2 }}" class="nickName frcc">{{ profile.name }}</view>
     </view>
   </view>
   <view class="cardBox">
     <!-- 待签合同 -->
-    <view wx:if="{{ isLogin && profile.role === 2 }}" class="cardItem frbc">
+    <view wx:if="{{ isLogin && profile.role === 2 }}" class="cardItem frbc" bind:tap="goHetong">
       <view class="frcc">
         <image src="/images/mineModule/mine_dqht.png" mode="" style="width: 36rpx; height: 36rpx;" />
         <view class="titleText">待签合同</view>

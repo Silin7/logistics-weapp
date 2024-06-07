@@ -117,7 +117,12 @@ Page({
       open_id: wx.getStorageSync('open_id'),
       phone: this.data.userPhone,
     }).then(res => {
-      console.log('directorregister------->', res);
+      wx.setStorageSync('registered', true)
+      wx.setStorageSync('token', res.data.token)
+      if (res.data.profile) {
+        wx.setStorageSync('profile', res.data.profile)
+        wx.setStorageSync('open_id', res.data.profile.open_id)
+      }
       wx.hideLoading()
       wx.showToast({
         title: '登录成功'

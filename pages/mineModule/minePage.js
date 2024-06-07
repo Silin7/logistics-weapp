@@ -59,10 +59,17 @@ Page({
     })
   },
 
+  // 待签合同
+  goHetong: function () {
+    wx.navigateTo({
+      url: '/pages/hetongModule/hetongList/hetongList',
+    })
+  },
+
   // 我的货单
   goHuodan: function () {
     wx.navigateTo({
       url: '/pages/huodanModule/huodanList/huodanList',
     })
-  }
+  },
 })
