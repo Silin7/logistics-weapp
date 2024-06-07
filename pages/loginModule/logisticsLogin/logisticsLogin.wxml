@@ -4,7 +4,7 @@
       <view class="hyzcText">欢迎注册</view>
       <view class="tipsText">登录后更精彩</view>
     </view>
-    <image src="https://www.silin7.cn/WULIU/loginWlqy.png" mode="" style="width: 380rpx; height: 275rpx;" />
+    <image src="http://39.106.44.146/WULIU/loginWlqy.png" mode="" style="width: 380rpx; height: 275rpx;" />
   </view>
   <!-- 登录卡片 -->
   <view class="cardBox">
@@ -25,11 +25,11 @@
     <view class="frsc">
       <view style="margin-right: 28rpx;" bind:tap="chooseFiles" data-code="01">
         <image wx:if="{{ license_page }}" src="{{ license_page }}" mode="aspectFill" style="width: 265rpx; height: 168rpx;" />
-        <image wx:else src="https://www.silin7.cn/WULIU/login_jsz0.png" mode="aspectFit" style="width: 265rpx; height: 168rpx;" />
+        <image wx:else src="http://39.106.44.146/WULIU/login_jsz0.png" mode="aspectFit" style="width: 265rpx; height: 168rpx;" />
       </view>
       <view bind:tap="chooseFiles" data-code="02">
         <image wx:if="{{ license_subpage }}" src="{{ license_subpage }}" mode="aspectFill" style="width: 265rpx; height: 168rpx;" />
-        <image wx:else src="https://www.silin7.cn/WULIU/login_jsz1.png" mode="" style="width: 265rpx; height: 168rpx;" />
+        <image wx:else src="http://39.106.44.146/WULIU/login_jsz1.png" mode="" style="width: 265rpx; height: 168rpx;" />
       </view>
     </view>
     <view class="submitClass frcc" bind:tap="submitFunction">提交</view>

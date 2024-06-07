@@ -4,7 +4,7 @@
       <view class="hyzcText">欢迎注册</view>
       <view class="tipsText">登录后更精彩</view>
     </view>
-    <image src="https://www.silin7.cn/WULIU/logincgs.png" mode="" style="width: 380rpx; height: 275rpx;" />
+    <image src="http://39.106.44.146/WULIU/logincgs.png" mode="" style="width: 380rpx; height: 275rpx;" />
   </view>
   <!-- 登录卡片 -->
   <view class="cardBox">
