@@ -55,6 +55,7 @@ Page({
     })
     wx.uploadFile({
       url: `${baseURL}/voucher/savesign`,
+      // url: `${baseURL}/delivery/savesign`,
       filePath: this.data.sign_tmp_file,
       name: 'file',
       header: {
@@ -62,6 +63,7 @@ Page({
       },
       formData: {
         voucher_id: this.data.id,
+        // sign_tel: '13256605200'
       },
       success: function (res) {
         const data = JSON.parse(res.data)

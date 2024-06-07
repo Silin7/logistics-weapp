@@ -1,50 +1,23 @@
+import esRequest from '../../../utils/esRequest';
+
 Page({
   data: {
-    triggered: true,
-    reachTimer: null,
-    total: 0,
-    currentPage: 1,
-    dataList: [{
-      kh: '清河创新彩钢李经理',
-      bh: 'SA-2024-05-0204',
-      date: '2024年5月9日',
-    },{
-      kh: '清河创新彩钢李经理',
-      bh: 'SA-2024-05-0204',
-      date: '2024年5月9日',
-    },{
-      kh: '清河创新彩钢李经理',
-      bh: 'SA-2024-05-0204',
-      date: '2024年5月9日',
-    }]
+    dataList: []
   },
 
   onLoad: function () {
-    // this.initFunction()
-  },
-
-  // 初始化函数
-  initFunction: function () {
-    this.setData({
-      total: 0,
-      currentPage: 1,
-      dataList: [],
-    })
     this.getDataList()
   },
 
-  // 公告列表
+  // 货单列表
   getDataList: function () {
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('systemPosts', {
-      page: this.data.currentPage,
-    }).then(res => {
-      this.data.dataList = this.data.dataList.concat(res.data.data)
+    esRequest('deliverylist').then(res => {
+      console.log(res.data.data);
       this.setData({
-        total: res.data.total,
-        dataList: this.data.dataList
+        dataList: res.data.data
       })
       wx.hideLoading();
     }).catch((err) => {
@@ -63,29 +36,12 @@ Page({
     // })
   },
 
-  // 自定义下拉刷新被触发
-  permessagerePull: function () {
-    this.setData({
-      triggered: true,
+  // 页面跳转 - 签字确认
+  goSignConfirm: function (e) {
+    const item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: `/pages/signModule/signConfirm/signConfirm?id=${item.id}&linkMan=${item.linkMan}&t_company_name=${item.t_company_name}`
     })
-    this.initFunction()
-    setTimeout(() => {
-      this.setData({
-        triggered: false,
-      })
-    }, 1000)
-  },
-
-  // 滚动到底部
-  onScrollBottom: function () {
-    let _this = this
-    clearTimeout(this.data.reachTimer)
-    this.data.reachTimer = setTimeout(function () {
-      if (_this.data.dataList.length < _this.data.total) {
-        _this.data.currentPage += 1
-        _this.getDataList()
-      }
-    }, 1000)
-  },
+  }
 
 })
