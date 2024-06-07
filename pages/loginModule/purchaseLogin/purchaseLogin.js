@@ -117,10 +117,6 @@ Page({
       open_id: wx.getStorageSync('open_id'),
       phone: this.data.userPhone,
     }).then(res => {
-      if (res.code === 401) {
-        this.submitRequest()
-        return
-      }
       console.log('directorregister------->', res);
       wx.hideLoading()
       wx.showToast({

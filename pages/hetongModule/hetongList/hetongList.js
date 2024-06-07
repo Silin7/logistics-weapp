@@ -9,7 +9,7 @@ Page({
     this.getDataList()
   },
 
-  // 公告列表
+  // 合同列表
   getDataList: function () {
     wx.showLoading({
       title: '加载中',

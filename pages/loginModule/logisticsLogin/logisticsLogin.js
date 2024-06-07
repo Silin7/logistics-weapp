@@ -255,9 +255,11 @@ Page({
       license_page: this.data.license_page,
       license_subpage: this.data.license_subpage,
     }).then(res => {
-      if (res.code === 401) {
-        this.submitRequest()
-        return
+      wx.setStorageSync('registered', true)
+      wx.setStorageSync('token', res.data.token)
+      if (res.data.profile) {
+        wx.setStorageSync('profile', res.data.profile)
+        wx.setStorageSync('open_id', res.data.profile.open_id)
       }
       wx.hideLoading()
       wx.showToast({
