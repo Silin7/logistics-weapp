@@ -59,5 +59,10 @@ Page({
     })
   },
 
-  // 
+  // 我的货单
+  goHuodan: function () {
+    wx.navigateTo({
+      url: '/pages/huodanModule/huodanList/huodanList',
+    })
+  }
 })

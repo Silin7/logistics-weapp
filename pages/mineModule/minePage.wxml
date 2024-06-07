@@ -25,7 +25,7 @@
       </view>
     </view>
     <!-- 我的货单 -->
-    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc">
+    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc" bind:tap="goHuodan">
       <view class="frcc">
         <image src="/images/mineModule/mine_wdhd.png" mode="" style="width: 36rpx; height: 36rpx;" />
         <view class="titleText">我的货单</view>
