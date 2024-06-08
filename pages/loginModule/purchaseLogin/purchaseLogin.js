@@ -44,7 +44,8 @@ Page({
       this.setData({
         codeFlag: true,
         verificationCode: res.data.code,
-        companyName: res.data.director.company.name
+        // 这里有问题，记得改
+        // companyName: res.data.director.company.name
       })
       wx.hideLoading()
     }).catch((err) => {
