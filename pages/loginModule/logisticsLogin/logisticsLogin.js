@@ -273,7 +273,7 @@ Page({
     }).catch((err) => {
       wx.hideLoading()
       wx.showToast({
-        title: err.msg,
+        title: err.message,
         icon: 'none'
       })
     })

@@ -83,7 +83,7 @@ Page({
         console.log('error', error);
         wx.hideLoading()
         wx.showToast({
-          title: err.msg,
+          title: err.message,
           icon: 'none'
         })
       }
@@ -108,7 +108,7 @@ Page({
     //   console.log('err', err);
     //   wx.hideLoading()
     //   wx.showToast({
-    //     title: err.msg,
+    //     title: err.message,
     //     icon: 'none'
     //   })
     // })
