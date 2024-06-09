@@ -82,4 +82,11 @@ Page({
       url: '/pages/huodanModule/huodanList/huodanList',
     })
   },
+
+  // 荣成货源
+  goHouyuan: function () {
+    wx.navigateTo({
+      url: '/pages/huoyuanModule/huoyuanList/huoyuanList',
+    })
+  }
 })

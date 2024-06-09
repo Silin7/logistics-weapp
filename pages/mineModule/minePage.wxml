@@ -37,7 +37,7 @@
       </view>
     </view>
     <!-- 荣程货源 -->
-    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc">
+    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc" bind:tap="goHouyuan">
       <view class="frcc">
         <image src="/images/mineModule/mine_rchy.png" mode="" style="width: 36rpx; height: 36rpx;" />
         <view class="titleText">荣程货源</view>
@@ -60,7 +60,7 @@
       </view>
     </view>
     <!-- 我的资料 -->
-    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc">
+    <!-- <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc">
       <view class="frcc">
         <image src="/images/mineModule/mine_wdzl.png" mode="" style="width: 36rpx; height: 36rpx;" />
         <view class="titleText">我的资料</view>
@@ -69,7 +69,7 @@
         <view class="placeholderText">查看</view>
         <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
       </view>
-    </view>
+    </view> -->
     <!-- 联系客服 -->
     <view class="cardItem frbc">
       <view class="frcc">
