@@ -94,6 +94,7 @@ Page({
       },
       success: function (res) {
         const data = JSON.parse(res.data)
+        console.log('弹框确认', data);
         wx.hideLoading()
         wx.showToast({
           title: '操作成功'

@@ -69,6 +69,11 @@ let systemRequest = {
     apiName: '/voucher/savesign',
     name: '合同签字'
   },
+  voucherhavesigned: {
+    apiMethod: 'GET',
+    apiName: '/voucherhavesigned',
+    name: '合同是否签字'
+  },
   deliverylist: {
     apiMethod: 'GET',
     apiName: '/deliverylist',
@@ -79,6 +84,11 @@ let systemRequest = {
     apiName: '/delivery/savesign',
     name: '物流司机用户端签字'
   },
+  deliveryhavesigned: {
+    apiMethod: 'GET',
+    apiName: '/deliveryhavesigned',
+    name: '运货单（收货确认单）是否签字'
+  }
 }
 
 module.exports = systemRequest

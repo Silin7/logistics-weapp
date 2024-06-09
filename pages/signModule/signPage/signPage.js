@@ -1,5 +1,6 @@
 Page({
   data: {
+    routerData: {},
     canvasName: 'handWriting',
     ctx: '',
     canvasWidth: 0,
@@ -29,7 +30,8 @@ Page({
     linePrack: [] //划线轨迹 , 生成线条的实际点
   },
 
-  onLoad: function () {
+  onLoad: function (options) {
+    this.data.routerData = options
     let canvasName = this.data.canvasName
     let ctx = wx.createCanvasContext(canvasName)
     this.setData({
@@ -52,16 +54,26 @@ Page({
 
   // 完成
   subCanvas: function () {
+    let _this = this
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
       canvasId: 'handWriting',
       success: function (res) {
         wx.setStorageSync('sign_tmp_file', res.tempFilePath)
-        // wx.setStorageSync('have_signed', 1)
-        wx.navigateBack({
-          delta: 1
-        })
+        if (_this.data.routerData.pageType === 'hetong') {
+          wx.redirectTo({
+            url: `/pages/signModule/signConfirm/signConfirm?id=${_this.data.routerData.pageId}&linkMan=${_this.data.routerData.linkMan}&t_company_name=${_this.data.routerData.t_company_name}`,
+          })
+        } else if (_this.data.routerData.pageType === 'huodan') {
+          wx.redirectTo({
+            url: `/pages/signModule/driverSign/driverSign?id=${_this.data.routerData.pageId}&t_company_name=${_this.data.routerData.t_company_name}`
+          })
+        } else {
+          wx.navigateBack({
+            delta: 1
+          })
+        }
       }
     })
   },
@@ -278,7 +290,6 @@ Page({
         let a = this.ctaCalc(point[0].x, point[0].y, point[0].r, point[1].x, point[1].y, point[1].r, point[2].x, point[2].y, point[2].r);
         a[0].color = this.data.lineColor;
         // let bethelPoint = this.data.bethelPoint;
-        // console.log(a)
         // console.log(this.data.bethelPoint)
         // bethelPoint = bethelPoint.push(a);
         this.bethelDraw(a, 1);

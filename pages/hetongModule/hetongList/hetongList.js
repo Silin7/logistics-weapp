@@ -15,7 +15,6 @@ Page({
       title: '加载中',
     })
     esRequest('voucherlist').then(res => {
-      console.log(res.data.data);
       this.setData({
         dataList: res.data.data
       })
@@ -30,10 +29,11 @@ Page({
   },
 
   // 页面跳转 - 详细
-  goNoticeDetail: function (e) {
-    // wx.navigateTo({
-    //   url: '/pages/noticeModule/noticeDetail/noticeDetail?id=' + e.currentTarget.dataset.item.id,
-    // })
+  goVoucherhavesigned: function (e) {
+    let item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: `/pages/webModule/webView/webView?pageType=hetong&pageId=${item.id}&webUrl=${item.orderurl}&linkMan=${item.linkMan}&t_company_name=${item.t_company_name}`,
+    })
   },
 
   // 页面跳转 - 签字确认
