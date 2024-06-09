@@ -1,0 +1,5 @@
+<view class="pagecontentPage">
+  <view class="richTextBox">
+    <rich-text nodes="{{ content }}" />
+  </view>
+</view>

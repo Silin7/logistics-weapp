@@ -48,7 +48,7 @@
       </view>
     </view>
     <!-- 用户须知 -->
-    <view class="cardItem frbc">
+    <view class="cardItem frbc" bind:tap="goPagecontent">
       <view class="frcc">
         <image src="/images/mineModule/mine_yhxz.png" mode="" style="width: 36rpx; height: 36rpx;" />
         <view class="titleText">用户须知</view>

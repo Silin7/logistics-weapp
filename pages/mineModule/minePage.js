@@ -18,6 +18,13 @@ Page({
     }
   },
 
+  // 用户须知
+  goPagecontent: function () {
+    wx.navigateTo({
+      url: '/pages/noticeModule/pagecontent/pagecontent?code=protocol&title=用户须知',
+    })
+  },
+
   // 点击登录
   goLogin: function () {
     wx.showActionSheet({
@@ -44,6 +51,9 @@ Page({
 
   // 用户登录后获取用户的相关资料
   getProfile: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
     esRequest('profile').then(res => {
       this.setData({
         profile: res.data.profile

@@ -1,0 +1,13 @@
+.pagecontentPage {
+  padding: 20rpx;
+  min-height: 100vh;
+  background-color: #F4F8FB;
+}
+
+.richTextBox {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #545454;
+  line-height: 60rpx;
+}

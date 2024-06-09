@@ -88,6 +88,11 @@ let systemRequest = {
     apiMethod: 'GET',
     apiName: '/deliveryhavesigned',
     name: '运货单（收货确认单）是否签字'
+  },
+  pagecontent: {
+    apiMethod: 'GET',
+    apiName: '/pagecontent',
+    name: '单页文章详细'
   }
 }
 
