@@ -6,7 +6,8 @@ Page({
     reachTimer: null,
     total: 0,
     currentPage: 1,
-    dataList: []
+    dataList: [],
+    tel: '',
   },
 
   onLoad: function () {
@@ -33,6 +34,7 @@ Page({
     }).then(res => {
       this.data.dataList = this.data.dataList.concat(res.data.data)
       this.setData({
+        tel: res.data.tel,
         total: res.data.total,
         dataList: this.data.dataList
       })
@@ -46,11 +48,11 @@ Page({
     })
   },
 
-  // 页面跳转 - 详细
-  goNoticeDetail: function (e) {
-    // wx.navigateTo({
-    //   url: '/pages/noticeModule/noticeDetail/noticeDetail?id=' + e.currentTarget.dataset.item.id,
-    // })
+  // 承运报价
+  makeCall: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.tel,
+    })
   },
 
   // 自定义下拉刷新被触发

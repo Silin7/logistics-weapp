@@ -7,7 +7,8 @@
           <image src="/images/businessModule/hy_jiantou.png" mode="" style="margin: 0 30rpx; width: 50rpx; height: 15rpx;" />
           <view class="placeText">{{ item.address_to }}</view>
         </view>
-        <view class="gxDateText">{{ item.gxDate }}更新</view>
+        <view></view>
+        <!-- <view class="gxDateText">{{ item.gxDate }}更新</view> -->
       </view>
       <view class="contentBox">
         <view class="frsc">
@@ -22,8 +23,9 @@
         </view>
       </view>
       <view class="frbc mt30">
-        <view class="distanceText">约{{ item.distance }}km</view>
-        <view class="cybjBtn frcc">承运报价</view>
+        <!-- <view class="distanceText">约{{ item.distance }}km</view> -->
+        <view></view>
+        <view class="cybjBtn frcc" bind:tap="makeCall">承运报价</view>
       </view>
     </view>
   </view>
