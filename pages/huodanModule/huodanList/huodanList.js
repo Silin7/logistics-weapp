@@ -5,7 +5,7 @@ Page({
     dataList: []
   },
 
-  onLoad: function () {
+  onShow: function () {
     this.getDataList()
   },
 
