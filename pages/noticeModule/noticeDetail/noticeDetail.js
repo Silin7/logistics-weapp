@@ -19,7 +19,6 @@ Page({
       icon: 'none'
     })
     esRequest('article', '', this.data.id).then(res => {
-      console.log(res.data.data);
       this.data.noticeForm = res.data.data
       this.data.noticeForm.contents = this.data.noticeForm.contents.replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
       this.setData({

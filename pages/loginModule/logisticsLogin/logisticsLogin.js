@@ -155,7 +155,6 @@ Page({
         },
         success: function (res) {
           const data = JSON.parse(res.data)
-          console.log('data', data);
           if (data.status) {
             resolve(JSON.parse(res.data))
           } else {

@@ -17,7 +17,7 @@ App({
             },
             success: function (res2) {
               const response = res2.data
-              console.log('response', response);
+              // console.log('response', response);
               if (response.status) {
                 wx.setStorageSync('registered', response.data.registered)
                 wx.setStorageSync('token', response.data.token)
