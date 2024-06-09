@@ -1,0 +1,16 @@
+<view class="webViewPage">
+  <web-view src="https://rongcheng.duoqixin.com/sign/voucher/1" style="position: relative;">
+    <cover-view wx:if="{{ signed === 0 }}" class="btnStyle" bind:tap="goSignPage">
+      签字
+    </cover-view>
+    <cover-view wx:if="{{ signed === 1 }}" class="btnStyle" bind:tap="goHomePage">
+      回到首页
+    </cover-view>
+  </web-view>
+  <!-- <cover-view wx:if="{{ signed === 0 }}" class="btnStyle" bind:tap="goSignPage">
+    签字
+  </cover-view>
+  <cover-view wx:if="{{ signed === 1 }}" class="btnStyle" bind:tap="goHomePage">
+    回到首页
+  </cover-view> -->
+</view>

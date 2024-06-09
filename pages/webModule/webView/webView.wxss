@@ -1,0 +1,22 @@
+.webViewPage {
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.btnStyle {
+  position: fixed;
+  z-index: 999;
+  bottom: 20rpx;
+  right: 20rpx;
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  background: #26D08A;
+  border-radius: 11rpx;
+  text-indent: 20rpx;
+  letter-spacing: 20rpx;
+}
