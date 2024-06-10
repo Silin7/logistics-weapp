@@ -40,7 +40,7 @@ Page({
   goSignConfirm: function (e) {
     const item = e.currentTarget.dataset.item
     wx.navigateTo({
-      url: `/pages/signModule/driverSign/driverSign?id=${item.id}&t_company_name=${item.t_company_name}`
+      url: `/pages/signModule/driverSign/driverSign?id=${item.id}&t_company_name=${item.t_company_name}&tplusdelivery_id=${item.tplusdelivery_id}&webUrl=${item.orderurl}`
     })
   }
 

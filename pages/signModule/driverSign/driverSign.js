@@ -7,6 +7,8 @@ Page({
   data: {
     id: '',
     t_company_name: '',
+    tplusdelivery_id: '',
+    webUrl: '',
     sign_tel: '',
     sign_tmp_file: '',
   },
@@ -15,6 +17,8 @@ Page({
     this.setData({
       id: options.id,
       t_company_name: options.t_company_name,
+      tplusdelivery_id: options.tplusdelivery_id,
+      webUrl: options.webUrl,
     })
   },
 
@@ -101,8 +105,8 @@ Page({
         })
         wx.removeStorageSync('sign_tmp_file')
         setTimeout(() => {
-          wx.navigateBack({
-            delta: 1
+          wx.redirectTo({
+            url: `/pages/webModule/webView/webView?pageType=huodan&pageId=${this.data.id}&webUrl=${this.data.webUrl}&tplusdelivery_id=${this.data.tplusdelivery_id}&t_company_name=${this.data.t_company_name}`,
           })
         }, 200)
       },

@@ -8,6 +8,7 @@ Page({
     id: '',
     linkMan: '',
     t_company_name: '',
+    webUrl: '',
     sign_tmp_file: '',
   },
 
@@ -16,6 +17,7 @@ Page({
       id: options.id,
       linkMan: options.linkMan,
       t_company_name: options.t_company_name,
+      webUrl: options.webUrl,
     })
   },
 
@@ -73,8 +75,8 @@ Page({
         })
         wx.removeStorageSync('sign_tmp_file')
         setTimeout(() => {
-          wx.navigateBack({
-            delta: 1
+          wx.redirectTo({
+            url: `/pages/webModule/webView/webView?pageType=hetong&pageId=${this.data.id}&webUrl=${this.data.webUrl}&linkMan=${this.data.linkMan}&t_company_name=${this.data.t_company_name}`,
           })
         }, 200)
       },
