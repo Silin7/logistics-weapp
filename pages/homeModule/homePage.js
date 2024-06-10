@@ -39,16 +39,44 @@ Page({
 
   // 页面跳转 - 客户端
   goLoginKhd: function () {
-    wx.navigateTo({
-      url: '/pages/loginModule/purchaseLogin/purchaseLogin',
-    })
+    if (!wx.getStorageSync('registered')) {
+      wx.navigateTo({
+        url: '/pages/loginModule/purchaseLogin/purchaseLogin',
+      })
+    } else {
+      let profile = wx.getStorageSync('profile')
+      if (profile.role && profile.role === 2) {
+        wx.navigateTo({
+          url: '/pages/hetongModule/hetongList/hetongList',
+        })
+      } else {
+        wx.showToast({
+          title: '暂无权限',
+          icon: 'none'
+        })
+      }
+    }
   },
 
   // 页面跳转 - 物流端
   goLoginWld: function () {
-    wx.navigateTo({
-      url: '/pages/loginModule/logisticsLogin/logisticsLogin',
-    })
+    if (!wx.getStorageSync('registered')) {
+      wx.navigateTo({
+        url: '/pages/loginModule/logisticsLogin/logisticsLogin',
+      })
+    } else {
+      let profile = wx.getStorageSync('profile')
+      if (profile.role && profile.role === 1) {
+        wx.navigateTo({
+          url: '/pages/huodanModule/huodanList/huodanList',
+        })
+      } else {
+        wx.showToast({
+          title: '暂无权限',
+          icon: 'none'
+        })
+      }
+    }
   },
 
   // // 页面跳转 - 合同列表
