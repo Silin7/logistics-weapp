@@ -5,6 +5,7 @@ Page({
     userPhone: '',
     codeFlag: null,
     verificationCode: '',
+    verificationCode2: '',
     verificationTimer: null,
     countdown: 60,
     companyName: '',
@@ -73,12 +74,12 @@ Page({
     }, 1000)
   },
 
-  // // 验证码 - input
-  // verificationInput: function (e) {
-  //   this.setData({
-  //     verificationCode: e.detail.value
-  //   })
-  // },
+  // 验证码 - input
+  verificationInput: function (e) {
+    this.setData({
+      verificationCode2: e.detail.value
+    })
+  },
 
   // 提交按钮 - 弹出
   submitFunction: function () {
@@ -90,9 +91,16 @@ Page({
       });
       return
     }
-    if (!this.data.verificationCode) {
+    if (!this.data.verificationCode2) {
       wx.showToast({
         title: '请输入验证码',
+        icon: 'none'
+      });
+      return
+    }
+    if (this.data.verificationCode2 != this.data.verificationCode) {
+      wx.showToast({
+        title: '验证码错误',
         icon: 'none'
       });
       return

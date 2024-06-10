@@ -7,6 +7,7 @@ Page({
   data: {
     userPhone: '',
     verificationCode: '',
+    verificationCode2: '',
     numberplate: '',
     name: '',
     driverLicenseCode: '',
@@ -75,12 +76,12 @@ Page({
     })
   },
 
-  // // 验证码 - input
-  // verificationInput: function (e) {
-  //   this.setData({
-  //     verificationCode: e.detail.value
-  //   })
-  // },
+  // 验证码 - input
+  verificationInput: function (e) {
+    this.setData({
+      verificationCode2: e.detail.value
+    })
+  },
 
   // 验证码倒计时
   countdownChange: function () {
@@ -194,9 +195,16 @@ Page({
       });
       return
     }
-    if (!this.data.verificationCode) {
+    if (!this.data.verificationCode2) {
       wx.showToast({
         title: '请输入验证码',
+        icon: 'none'
+      });
+      return
+    }
+    if (this.data.verificationCode2 != this.data.verificationCode) {
+      wx.showToast({
+        title: '验证码错误',
         icon: 'none'
       });
       return
