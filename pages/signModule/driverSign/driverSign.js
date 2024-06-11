@@ -82,6 +82,7 @@ Page({
 
   // 弹框确认
   modalConfirm: function () {
+    let _this = this
     wx.showLoading({
       title: '加载中',
     })
@@ -106,7 +107,7 @@ Page({
         wx.removeStorageSync('sign_tmp_file')
         setTimeout(() => {
           wx.redirectTo({
-            url: `/pages/webModule/webView/webView?pageType=huodan&pageId=${this.data.id}&webUrl=${this.data.webUrl}&tplusdelivery_id=${this.data.tplusdelivery_id}&t_company_name=${this.data.t_company_name}`,
+            url: `/pages/webModule/webView/webView?pageType=huodan&pageId=${_this.data.id}&webUrl=${_this.data.webUrl}&tplusdelivery_id=${_this.data.tplusdelivery_id}&t_company_name=${_this.data.t_company_name}`,
           })
         }, 200)
       },

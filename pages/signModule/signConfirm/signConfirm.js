@@ -52,12 +52,12 @@ Page({
 
   // 弹框确认
   modalConfirm: function () {
+    let _this = this
     wx.showLoading({
       title: '加载中',
     })
     wx.uploadFile({
       url: `${baseURL}/voucher/savesign`,
-      // url: `${baseURL}/delivery/savesign`,
       filePath: this.data.sign_tmp_file,
       name: 'file',
       header: {
@@ -65,7 +65,6 @@ Page({
       },
       formData: {
         voucher_id: this.data.id,
-        // sign_tel: '13256605200'
       },
       success: function (res) {
         const data = JSON.parse(res.data)
@@ -76,7 +75,7 @@ Page({
         wx.removeStorageSync('sign_tmp_file')
         setTimeout(() => {
           wx.redirectTo({
-            url: `/pages/webModule/webView/webView?pageType=hetong&pageId=${this.data.id}&webUrl=${this.data.webUrl}&linkMan=${this.data.linkMan}&t_company_name=${this.data.t_company_name}`,
+            url: `/pages/webModule/webView/webView?pageType=hetong&pageId=${_this.data.id}&webUrl=${_this.data.webUrl}&linkMan=${_this.data.linkMan}&t_company_name=${_this.data.t_company_name}`,
           })
         }, 200)
       },
