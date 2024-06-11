@@ -1,5 +1,5 @@
 <view class="webViewPage">
-  <web-view src="https://rongcheng.duoqixin.com/sign/voucher/1" style="position: relative;">
+  <web-view src="{{ webUrl }}" style="position: relative;">
     <cover-view wx:if="{{ signed === 0 }}" class="btnStyle" bind:tap="goSignPage">
       签字
     </cover-view>
