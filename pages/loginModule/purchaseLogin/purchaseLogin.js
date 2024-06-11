@@ -27,14 +27,14 @@ Page({
       })
       return
     }
-    var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
-    if (!reg.test(this.data.userPhone)) {
-      wx.showToast({
-        title: '手机号格式错误',
-        icon: 'none'
-      })
-      return
-    }
+    // var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+    // if (!reg.test(this.data.userPhone)) {
+    //   wx.showToast({
+    //     title: '手机号格式错误',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
     wx.showLoading({
       title: '加载中',
     })

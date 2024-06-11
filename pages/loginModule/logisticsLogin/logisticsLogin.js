@@ -48,14 +48,14 @@ Page({
       })
       return
     }
-    let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
-    if (!phoneReg.test(this.data.userPhone)) {
-      wx.showToast({
-        title: '手机号格式错误',
-        icon: 'none'
-      })
-      return
-    }
+    // let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
+    // if (!phoneReg.test(this.data.userPhone)) {
+    //   wx.showToast({
+    //     title: '手机号格式错误',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
     wx.showLoading({
       title: '加载中',
     })
@@ -180,14 +180,14 @@ Page({
       });
       return
     }
-    let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
-    if (!phoneReg.test(this.data.userPhone)) {
-      wx.showToast({
-        title: '手机号格式错误',
-        icon: 'none'
-      })
-      return
-    }
+    // let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
+    // if (!phoneReg.test(this.data.userPhone)) {
+    //   wx.showToast({
+    //     title: '手机号格式错误',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
     if (!this.data.name) {
       wx.showToast({
         title: '请输入姓名',

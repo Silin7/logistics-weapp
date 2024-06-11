@@ -58,14 +58,14 @@ Page({
       })
       return
     }
-    let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
-    if (!phoneReg.test(this.data.sign_tel)) {
-      wx.showToast({
-        title: '手机号格式错误',
-        icon: 'none'
-      })
-      return
-    }
+    // let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
+    // if (!phoneReg.test(this.data.sign_tel)) {
+    //   wx.showToast({
+    //     title: '手机号格式错误',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
     let _this = this
     wx.showModal({
       title: '提示',
