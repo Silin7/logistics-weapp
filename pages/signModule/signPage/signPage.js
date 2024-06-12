@@ -63,11 +63,11 @@ Page({
         wx.setStorageSync('sign_tmp_file', res.tempFilePath)
         if (_this.data.routerData.pageType === 'hetong') {
           wx.redirectTo({
-            url: `/pages/signModule/signConfirm/signConfirm?id=${_this.data.routerData.pageId}&linkMan=${_this.data.routerData.linkMan}&t_company_name=${_this.data.routerData.t_company_name}`,
+            url: '/pages/signModule/signConfirm/signConfirm',
           })
         } else if (_this.data.routerData.pageType === 'huodan') {
           wx.redirectTo({
-            url: `/pages/signModule/driverSign/driverSign?id=${_this.data.routerData.pageId}&t_company_name=${_this.data.routerData.t_company_name}`
+            url: '/pages/signModule/driverSign/driverSign'
           })
         } else {
           wx.navigateBack({

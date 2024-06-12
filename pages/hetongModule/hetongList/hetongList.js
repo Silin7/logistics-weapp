@@ -31,16 +31,17 @@ Page({
   // 页面跳转 - 详细
   goVoucherhavesigned: function (e) {
     let item = e.currentTarget.dataset.item
+    wx.setStorageSync('hetong', item)
     wx.navigateTo({
-      url: `/pages/webModule/webView/webView?pageType=hetong&pageId=${item.id}&webUrl=${item.orderurl}&linkMan=${item.linkMan}&t_company_name=${item.t_company_name}`,
+      url: `/pages/webModule/webView/webView?pageType=hetong&webUrl=${item.orderurl}`,
     })
   },
 
-  // 页面跳转 - 签字确认
-  goSignConfirm: function (e) {
-    const item = e.currentTarget.dataset.item
-    wx.navigateTo({
-      url: `/pages/signModule/signConfirm/signConfirm?id=${item.id}&linkMan=${item.linkMan}&t_company_name=${item.t_company_name}&webUrl=${item.orderurl}`
-    })
-  }
+  // // 页面跳转 - 签字确认
+  // goSignConfirm: function (e) {
+  //   const item = e.currentTarget.dataset.item
+  //   wx.navigateTo({
+  //     url: `/pages/signModule/signConfirm/signConfirm?id=${item.id}&linkMan=${item.linkMan}&t_company_name=${item.t_company_name}&webUrl=${item.orderurl}`
+  //   })
+  // }
 })

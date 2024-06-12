@@ -3,8 +3,7 @@
     <view class="hthText">合同号：{{ item.voucherCode }}</view>
     <view class="ppText">产品品牌：{{ item.pinpai }}</view>
     <view class="ppText">签订日期：{{ item.voucherDate }}</view>
-    <view class="xxBtn frcc" bind:tap="goVoucherhavesigned" data-item="{{ item }}">详细 ></view>
-    <view class="qzqrBtn frcc" bind:tap="goSignConfirm" data-item="{{ item }}">签字确认</view>
+    <view class="qzqrBtn frcc" bind:tap="goVoucherhavesigned" data-item="{{ item }}">签字确认</view>
   </view>
   <view wx:if="{{ dataList.length === 0 }}" class="nodataBox">
     <image src="/images/systemModule/zwsj.png" mode="aspectFill" />

@@ -3,23 +3,18 @@ import esRequest from '../../../utils/esRequest';
 Page({
   data: {
     pageType: '',
-    pageId: '',
     webUrl: '',
-    tplusdelivery_id: '',
-    linkMan: '',
-    t_company_name: '',
     signed: '',
   },
 
   onLoad: function (options) {
     this.setData({
       pageType: options.pageType,
-      pageId: options.pageId,
       webUrl: options.webUrl,
-      tplusdelivery_id: options.tplusdelivery_id || '',
-      linkMan: options.linkMan || '',
-      t_company_name: options.t_company_name,
     })
+  },
+
+  onShow: function () {
     if (this.data.pageType === 'hetong') {
       this.getVoucherhavesigned()
     }
@@ -33,7 +28,8 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('voucherhavesigned', '', this.data.pageId).then(res => {
+    let hetong = wx.getStorageSync('hetong')
+    esRequest('voucherhavesigned', '', hetong.id).then(res => {
       this.setData({
         signed: res.data.data.signed
       })
@@ -52,7 +48,8 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('deliveryhavesigned', '', this.data.tplusdelivery_id).then(res => {
+    let huodan = wx.getStorageSync('huodan')
+    esRequest('deliveryhavesigned', '', huodan.tplusdelivery_id).then(res => {
       this.setData({
         signed: res.data.data.signed
       })
@@ -68,8 +65,8 @@ Page({
 
   // 去签字
   goSignPage: function () {
-    wx.redirectTo({
-      url: `/pages/signModule/signPage/signPage?pageType=${this.data.pageType}&pageId=${this.data.pageId}&linkMan=${this.data.linkMan}&t_company_name=${this.data.t_company_name}`,
+    wx.navigateTo({
+      url: `/pages/signModule/signPage/signPage?pageType=${this.data.pageType}`,
     })
   },
 

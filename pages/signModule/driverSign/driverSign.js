@@ -1,29 +1,18 @@
 import {
   baseURL
 } from '../../../utils/baseURL'
-// import esRequest from "../../../utils/esRequest"
 
 Page({
   data: {
-    id: '',
     t_company_name: '',
-    tplusdelivery_id: '',
-    webUrl: '',
-    sign_tel: '',
     sign_tmp_file: '',
-  },
-
-  onLoad: function (options) {
-    this.setData({
-      id: options.id,
-      t_company_name: options.t_company_name,
-      tplusdelivery_id: options.tplusdelivery_id,
-      webUrl: options.webUrl,
-    })
+    sign_tel: '',
   },
 
   onShow: function () {
+    let huodan = wx.getStorageSync('huodan')
     this.setData({
+      t_company_name: huodan.t_company_name,
       sign_tmp_file: wx.getStorageSync('sign_tmp_file')
     })
   },
@@ -82,10 +71,10 @@ Page({
 
   // 弹框确认
   modalConfirm: function () {
-    let _this = this
     wx.showLoading({
       title: '加载中',
     })
+    let huodan = wx.getStorageSync('huodan')
     wx.uploadFile({
       url: `${baseURL}/delivery/savesign`,
       filePath: this.data.sign_tmp_file,
@@ -94,7 +83,7 @@ Page({
         Authorization: `Bearer ${wx.getStorageSync('token')}`
       },
       formData: {
-        voucher_id: this.data.id,
+        voucher_id: huodan.id || '',
         sign_tel: this.data.sign_tel
       },
       success: function (res) {
@@ -106,8 +95,8 @@ Page({
         })
         wx.removeStorageSync('sign_tmp_file')
         setTimeout(() => {
-          wx.redirectTo({
-            url: `/pages/webModule/webView/webView?pageType=huodan&pageId=${_this.data.id}&webUrl=${_this.data.webUrl}&tplusdelivery_id=${_this.data.tplusdelivery_id}&t_company_name=${_this.data.t_company_name}`,
+          wx.navigateBack({
+            delta: 1
           })
         }, 200)
       },
