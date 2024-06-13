@@ -88,5 +88,12 @@ Page({
     wx.navigateTo({
       url: '/pages/huoyuanModule/huoyuanList/huoyuanList',
     })
-  }
+  },
+
+  // 绑定车辆
+  goCarList: function () {
+    wx.navigateTo({
+      url: '/pages/carModule/carList/carList',
+    })
+  },
 })

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "绑定车辆",
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}

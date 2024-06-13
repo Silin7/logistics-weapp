@@ -2,6 +2,7 @@
   "pages": [
     "pages/homeModule/homePage",
     "pages/mineModule/minePage",
+    "pages/carModule/carList/carList",
     "pages/hetongModule/hetongList/hetongList",
     "pages/huodanModule/huodanList/huodanList",
     "pages/huoyuanModule/huoyuanList/huoyuanList",

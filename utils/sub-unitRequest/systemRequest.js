@@ -93,6 +93,16 @@ let systemRequest = {
     apiMethod: 'GET',
     apiName: '/pagecontent',
     name: '单页文章详细'
+  },
+  getnumberplate: {
+    apiMethod: 'GET',
+    apiName: '/getnumberplate',
+    name: '获取司机用户的车牌号'
+  },
+  addnumberplate: {
+    apiMethod: 'POST',
+    apiName: '/add/numberplate',
+    name: '物流司机新增车牌'
   }
 }
 

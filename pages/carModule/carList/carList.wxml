@@ -1,0 +1,29 @@
+<view class="mockexamListPage">
+  <view class="teacherBox frsc">
+    <image src="http://39.106.44.146/WULIU/mine3.png" mode="aspectFill" style="width: 124rpx; height: 124rpx; border-radius: 50%;" />
+    <view class="userName frcc">
+      {{ profile.name }}
+    </view>
+    <view class="addBtn frcc" bind:tap="showPopup">+ 新增车辆</view>
+  </view>
+  <view class="mockexamListBox">
+    <view wx:for="{{ dataList }}" wx:key="index" class="mockexamItem">
+      <view class="mockexamItemTitle">{{ item.numberplate }}</view>
+    </view>
+    <view wx:if="{{ dataList.length === 0 }}" class="nodataBox">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view>
+  </view>
+</view>
+
+<!-- 新增车辆 - 弹框 -->
+<van-popup show="{{ pshow }}">
+  <view class="popupBox">
+    <view class="labelText">录入车牌号</view>
+    <input value="{{ numberplate }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="numberplateInput" />
+    <view class="btnsBox frac">
+      <view class="btnCancel frcc" bind:tap="showClose">取消</view>
+      <view class="btnSave frcc" bind:tap="addnumberplateFunc">确定</view>
+    </view>
+  </view>
+</van-popup>

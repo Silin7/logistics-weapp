@@ -1,0 +1,109 @@
+.mockexamListPage {
+  min-height: 100vh;
+  background-color: #EEF7FF;
+  padding: 40rpx 25rpx;
+}
+
+.teacherBox {
+  position: relative;
+  padding: 0 35rpx;
+  height: 183rpx;
+  background: linear-gradient(90deg, #1EB9FA, #1F8DEE);
+  box-shadow: 0rpx 5rpx 13rpx 0rpx rgba(32, 135, 237, 0.15);
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+}
+
+.userName {
+  margin-left: 20rpx;
+  height: 33rpx;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  font-size: 36rpx;
+  line-height: 36rpx;
+  color: #FFFFFF;
+}
+
+.addBtn {
+  position: absolute;
+  right: 0;
+  width: 190rpx;
+  height: 70rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  border-radius: 40rpx 0rpx 0rpx 40rpx;
+  color: #FFFFFF;
+  background: #31BEFF;
+}
+
+.mockexamListBox {
+  min-height: calc(100vh - 400rpx);
+  /* padding-bottom: 200rpx; */
+  background: #FFFFFF;
+  box-shadow: 0rpx 5rpx 13rpx 0rpx rgba(32, 135, 237, 0.15);
+}
+
+.mockexamItem {
+  padding: 50rpx 30rpx;
+  border-bottom: 1px solid #DCDDE3;
+}
+
+.mockexamItemTitle {
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  font-size: 33rpx;
+  color: #2087ED;
+  line-height: 33rpx;
+}
+
+.popupBox {
+  width: calc(100vw - 120rpx);
+  padding: 40rpx 40rpx;
+}
+
+.labelText {
+  margin-bottom: 40rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 60rpx;
+}
+
+.inputClass {
+  margin-bottom: 40rpx;
+  height: 86rpx;
+  background: #F4F4F4;
+  border-radius: 12rpx;
+  padding-left: 45rpx;
+}
+
+.placeholderClass {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 60rpx;
+  opacity: 0.2;
+}
+
+.btnCancel {
+  margin: 60rpx 0;
+}
+
+.btnCancel {
+  width: 200rpx;
+  height: 80rpx;
+  color: #005DFF;
+  border: 1rpx solid #005DFF;
+  border-radius: 10rpx;
+}
+
+.btnSave {
+  width: 200rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color: #005DFF;
+  border-radius: 10rpx;
+}
