@@ -70,26 +70,26 @@
 
 .qqzBtn {
   margin: 60rpx auto 0;
-  width: 372rpx;
+  width: 186rpx;
   height: 80rpx;
-  background: #26D08A;
+  background: #ececec;
   border-radius: 11rpx;
   font-family: PingFang SC;
   font-weight: 500;
   font-size: 28rpx;
-  color: #FFFFFF;
+  color: #999;
   line-height: 28rpx;
 }
 
 .yqzBtn {
   margin: 30rpx auto 0;
   width: 372rpx;
-  height: 80rpx;
+  height: 100rpx;
   background: #2084FF;
   border-radius: 11rpx;
   font-family: PingFang SC;
   font-weight: 500;
-  font-size: 28rpx;
+  font-size: 34rpx;
   color: #FFFFFF;
   line-height: 28rpx;
 }
