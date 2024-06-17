@@ -15,6 +15,9 @@ Page({
   },
 
   onShow: function () {
+    this.setData({
+      webUrl: `${this.data.webUrl}/?t=${new Date().getTime()}`
+    })
     if (this.data.pageType === 'hetong') {
       this.getVoucherhavesigned()
     }
