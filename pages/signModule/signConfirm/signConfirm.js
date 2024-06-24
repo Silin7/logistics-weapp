@@ -61,7 +61,8 @@ Page({
         const data = JSON.parse(res.data)
         wx.hideLoading()
         wx.showToast({
-          title: '操作成功'
+          title: '操作成功',
+          icon: 'none',
         })
         wx.removeStorageSync('sign_tmp_file')
         setTimeout(() => {
