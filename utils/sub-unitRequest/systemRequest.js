@@ -89,6 +89,11 @@ let systemRequest = {
     apiName: '/deliveryhavesigned',
     name: '运货单（收货确认单）是否签字'
   },
+  deliverySaveimgs: {
+    apiMethod: 'POST',
+    apiName: '/delivery/saveimgs',
+    name: '物流司机上传货物图片'
+  },
   pagecontent: {
     apiMethod: 'GET',
     apiName: '/pagecontent',
@@ -103,7 +108,7 @@ let systemRequest = {
     apiMethod: 'POST',
     apiName: '/add/numberplate',
     name: '物流司机新增车牌'
-  }
+  },
 }
 
 module.exports = systemRequest

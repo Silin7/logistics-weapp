@@ -4,7 +4,10 @@
       <view class="hthText">客户：{{ item.t_company_name }}</view>
       <view class="ppText">单据编号：{{ item.voucherCode }}</view>
       <view class="ppText">单据日期：{{ item.created_at }}</view>
-      <view class="qzqrBtn frcc" bind:tap="goDeliveryhavesigned" data-item="{{ item }}">让收货人签字</view>
+      <view class="btnsBox frac">
+        <view class="uploadBtn frcc" bind:tap="goUploadPage" data-item="{{ item }}">上传图片</view>
+        <view class="qzqrBtn frcc" bind:tap="goDeliveryhavesigned" data-item="{{ item }}">让收货人签字</view>
+      </view>
     </view>
     <view wx:if="{{ dataList.length === 0 }}" class="nodataBox">
       <image src="/images/systemModule/zwsj.png" mode="aspectFill" />

@@ -28,6 +28,14 @@ Page({
     })
   },
 
+  // 页面跳转 - 上传图片
+  goUploadPage: function (e) {
+    let item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: `/pages/systemModule/uploadPage/uploadPage?voucher_id=${item.id}`,
+    })
+  },
+
   // 页面跳转 - 详细
   goDeliveryhavesigned: function (e) {
     let item = e.currentTarget.dataset.item

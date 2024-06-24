@@ -1,0 +1,11 @@
+<view class="uploadPage">
+  <view class="titleStyle">送达后，请上传货物现场图（最多4张）</view>
+  <view class="uploadImgBox">
+    <view wx:for="{{ images }}" wx:key="index" class="dib uploadImgFlag">
+      <image src="/images/systemModule/delete.png" class="closeImg" bind:tap="deleteImg" data-index="{{ index }}" />
+      <image src="{{ item }}" mode="aspectFill" class="uploadImg" bind:tap="previewImage" data-url="{{ item.url }}" />
+    </view>
+    <image wx:if="{{ images.length < 4 }}" src="/images/systemModule/upload.png" class="uploadImg" bind:tap="chooseFiles" />
+  </view>
+  <view class="saveBtn frcc" bind:tap="saveFunction">保存</view>
+</view>

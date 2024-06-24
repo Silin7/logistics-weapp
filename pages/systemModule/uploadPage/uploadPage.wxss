@@ -1,0 +1,59 @@
+.uploadPage {
+  min-height: 100vh;
+  padding: 20rpx;
+  background-color: #F4F8FB;
+}
+
+.titleStyle {
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 60rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.uploadImgBox {
+  padding: 20rpx 0 0 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.uploadImgFlag {
+  position: relative;
+}
+
+.closeImg {
+  position: absolute;
+  z-index: 2;
+  right: 20rpx;
+  top: 0rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.uploadImg {
+  margin: 0 20rpx 20rpx 0;
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #F0F5F9;
+}
+
+.saveBtn {
+  margin: 20vh auto 0;
+  width: 80%;
+  height: 120rpx;
+  background: #26D08A;
+  border-radius: 12rpx;
+  font-family: PingFang SC;
+  font-weight: 700;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  line-height: 28rpx;
+  text-indent: 80rpx;
+  letter-spacing: 80rpx;
+}

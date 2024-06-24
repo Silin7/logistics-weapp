@@ -5,6 +5,7 @@
     "pages/carModule/carList/carList",
     "pages/hetongModule/hetongList/hetongList",
     "pages/huodanModule/huodanList/huodanList",
+    "pages/systemModule/uploadPage/uploadPage",
     "pages/huoyuanModule/huoyuanList/huoyuanList",
     "pages/webModule/webView/webView",
     "pages/signModule/driverSign/driverSign",
