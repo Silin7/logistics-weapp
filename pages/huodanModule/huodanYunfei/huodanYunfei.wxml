@@ -1,0 +1,13 @@
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <view class="hetongList">
+    <view wx:for="{{ dataList }}" wx:key="index" class="cardItem">
+      <view class="hthText">客户：{{ item.tplusdelivery.t_company_name }}</view>
+      <view class="ppText">单据编号：{{ item.voucherCode }}</view>
+      <view class="ppText">支付方式：{{ item.deliveryMode }}</view>
+      <view class="ppText">运费：{{ item.deliveryPric }}</view>
+    </view>
+    <view wx:if="{{ dataList.length === 0 }}" class="nodataBox">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view>
+  </view>
+</scroll-view>

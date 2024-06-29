@@ -82,6 +82,12 @@ Page({
       url: '/pages/huodanModule/huodanList/huodanList',
     })
   },
+  // 货单运费
+  goHuodanYf: function () {
+    wx.navigateTo({
+      url: '/pages/huodanModule/huodanYunfei/huodanYunfei',
+    })
+  },
 
   // 荣成货源
   goHouyuan: function () {

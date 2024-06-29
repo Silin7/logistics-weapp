@@ -36,6 +36,17 @@
         <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
       </view>
     </view>
+    <!-- 货单运费 -->
+    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc" bind:tap="goHuodanYf">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdhd.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">货单运费</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">查看</view>
+        <image src="/images/homeModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
     <!-- 荣程货源 -->
     <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc" bind:tap="goHouyuan">
       <view class="frcc">

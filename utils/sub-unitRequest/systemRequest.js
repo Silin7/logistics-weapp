@@ -109,6 +109,11 @@ let systemRequest = {
     apiName: '/add/numberplate',
     name: '物流司机新增车牌'
   },
+  mylogistics: {
+    apiMethod: 'GET',
+    apiName: '/mylogistics',
+    name: '司机物流运费列表'
+  },
 }
 
 module.exports = systemRequest
