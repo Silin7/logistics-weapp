@@ -6,7 +6,7 @@
 
 .cardItem {
   margin-bottom: 20rpx;
-  padding: 70rpx 30rpx;
+  padding: 50rpx 30rpx;
   background: #FFFFFF;
   box-shadow: 3rpx 4rpx 19rpx 5rpx #cde6f3;
   border-radius: 10rpx;
@@ -27,47 +27,10 @@
   font-weight: 400;
   font-size: 26rpx;
   color: #545454;
-  line-height: 39rpx;
+  line-height: 40rpx;
 }
 
-.xxBtn {
-  margin-top: 50rpx;
-  width: 140rpx;
-  height: 56rpx;
-  background: #F2F2F2;
-  border-radius: 12rpx;
-  font-family: PingFang SC;
-  font-weight: 500;
-  font-size: 26rpx;
-  color: #545454;
-  line-height: 26rpx;
-}
-
-.btnsBox {
-  margin: 100rpx 0 20rpx;
-}
-
-.qzqrBtn {
-  width: 300rpx;
-  height: 80rpx;
-  background: #26D08A;
-  border-radius: 12rpx;
-  font-family: PingFang SC;
-  font-weight: 500;
-  font-size: 28rpx;
-  color: #FFFFFF;
-  line-height: 28rpx;
-}
-
-.uploadBtn {
-  width: 200rpx;
-  height: 80rpx;
-  background: #FFFFFF;
-  border-radius: 12rpx;
-  font-family: PingFang SC;
-  font-weight: 500;
-  font-size: 28rpx;
+.yfText {
   color: #26D08A;
-  line-height: 28rpx;
-  border: 1rpx solid #26D08A;
+  font-weight: 700;
 }
