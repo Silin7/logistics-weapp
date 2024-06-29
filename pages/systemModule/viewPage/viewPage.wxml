@@ -1,0 +1,9 @@
+<view class="viewPage">
+  <view class="titleBox">
+    <view class="titleText">客户：{{ viewInfo.t_company_name }}</view>
+    <view class="titleText">单据编号：{{ viewInfo.voucherCode }}</view>
+  </view>
+  <view wx:for="{{ viewInfo.images }}" wx:key="index" class="imageBox">
+    <image src="{{ item }}" mode="widthFix" style="width: 100%;" bind:tap="previewImage" data-item="{{ item }}" />
+  </view>
+</view>

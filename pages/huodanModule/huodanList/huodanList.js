@@ -36,6 +36,15 @@ Page({
     })
   },
 
+  // 页面跳转 - 查看图片
+  goViewPage: function (e) {
+    let item = e.currentTarget.dataset.item
+    wx.setStorageSync('viewInfo', item)
+    wx.navigateTo({
+      url: '/pages/systemModule/viewPage/viewPage',
+    })
+  },
+
   // 页面跳转 - 详细
   goDeliveryhavesigned: function (e) {
     let item = e.currentTarget.dataset.item

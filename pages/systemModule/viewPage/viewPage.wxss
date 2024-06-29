@@ -1,0 +1,25 @@
+.viewPage {
+  min-height: 100vh;
+  padding: 20rpx;
+  background-color: #F4F8FB;
+}
+
+.titleBox {
+  margin-bottom: 30rpx;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.titleText {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #000000;
+  line-height: 60rpx;
+}
+
+.imageBox {
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
