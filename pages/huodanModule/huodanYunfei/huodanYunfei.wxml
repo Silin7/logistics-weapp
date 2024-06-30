@@ -6,7 +6,7 @@
       <view class="ppText">支付方式：{{ item.deliveryMode }}</view>
       <view class="ppText">
         运费：
-        <text class="yfText">{{ item.deliveryPric || '0' }}</text>
+        <text class="yfText">{{ item.deliveryPric || '' }}</text>
       </view>
     </view>
     <view wx:if="{{ dataList.length === 0 }}" class="nodataBox">

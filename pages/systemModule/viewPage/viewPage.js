@@ -6,7 +6,6 @@ Page({
   onShow: function () {
     const viewInfo = wx.getStorageSync('viewInfo')
     viewInfo.images = JSON.parse(viewInfo.images)
-    viewInfo.images = viewInfo.images.split(',')
     this.setData({
       viewInfo
     })
