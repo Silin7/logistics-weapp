@@ -6,7 +6,7 @@ Page({
   data: {
     t_company_name: '',
     sign_tmp_file: '',
-    sign_tel: '',
+    // sign_tel: '',
   },
 
   onShow: function () {
@@ -17,12 +17,12 @@ Page({
     })
   },
 
-  // 手机号 - input
-  signPhoneInput: function (e) {
-    this.setData({
-      sign_tel: e.detail.value
-    })
-  },
+  // // 手机号 - input
+  // signPhoneInput: function (e) {
+  //   this.setData({
+  //     sign_tel: e.detail.value
+  //   })
+  // },
 
   // 页面跳转 - 去签字
   goSignPage: function () {
@@ -40,13 +40,13 @@ Page({
       })
       return
     }
-    if (!this.data.sign_tel) {
-      wx.showToast({
-        title: '请输入手机号',
-        icon: 'none'
-      })
-      return
-    }
+    // if (!this.data.sign_tel) {
+    //   wx.showToast({
+    //     title: '请输入手机号',
+    //     icon: 'none'
+    //   })
+    //   return
+    // }
     // let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
     // if (!phoneReg.test(this.data.sign_tel)) {
     //   wx.showToast({
@@ -84,7 +84,7 @@ Page({
       },
       formData: {
         voucher_id: huodan.id || '',
-        sign_tel: this.data.sign_tel
+        // sign_tel: this.data.sign_tel
       },
       success: function (res) {
         const data = JSON.parse(res.data)
