@@ -1,6 +1,6 @@
 <view class="mockexamListPage">
   <view class="teacherBox frsc">
-    <image src="http://39.106.44.146/WULIU/mine3.png" mode="aspectFill" style="width: 124rpx; height: 124rpx; border-radius: 50%;" />
+    <image src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/mine3.png" mode="aspectFill" style="width: 124rpx; height: 124rpx; border-radius: 50%;" />
     <view class="userName frcc">
       {{ profile.name }}
     </view>
