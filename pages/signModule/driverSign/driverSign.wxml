@@ -6,10 +6,10 @@
       <view class="companyLabel">公司名称:</view>
       <view class="companyNameText">{{ t_company_name }}</view>
     </view>
-    <view class="frsc mt30">
+    <!-- <view class="frsc mt30">
       <view class="companyLabel mr10">签字人手机号:</view>
       <input value="{{ sign_tel }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="signPhoneInput" />
-    </view>
+    </view> -->
     <view wx:if="{{sign_tmp_file}}" class="signFile">
       <image src="{{ sign_tmp_file }}" mode="widthFix" style="width: 100%;" />
     </view>
