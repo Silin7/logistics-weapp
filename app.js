@@ -60,3 +60,19 @@ App({
     })
   }
 })
+
+! function () {
+  var PageTmp = Page;
+  Page = function (pageConfig) {
+    pageConfig = Object.assign({
+      onShareAppMessage: function () {
+        return {
+          title: '荣程供应链',
+          path: 'pages/homeModule/homePage',
+          imageUrl: '',
+        };
+      }
+    }, pageConfig);
+    PageTmp(pageConfig);
+  };
+}();
