@@ -5,14 +5,23 @@ import esRequest from '../../../utils/esRequest';
 
 Page({
   data: {
+    pageType: '',
     voucher_id: '',
     images: [],
   },
 
   onLoad: function (options) {
+    console.log(options);
     this.setData({
+      pageType: options.type,
       voucher_id: options.voucher_id
     })
+    if (this.data.pageType === 'update') {
+      const viewInfo = wx.getStorageSync('viewInfo')
+      this.setData({
+        images: JSON.parse(viewInfo.images)
+      })
+    }
   },
 
   // 选择文件

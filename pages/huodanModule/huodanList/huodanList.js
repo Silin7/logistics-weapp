@@ -31,8 +31,10 @@ Page({
   // 页面跳转 - 上传图片
   goUploadPage: function (e) {
     let item = e.currentTarget.dataset.item
+    let type = e.currentTarget.dataset.type
+    wx.setStorageSync('viewInfo', item)
     wx.navigateTo({
-      url: `/pages/systemModule/uploadPage/uploadPage?voucher_id=${item.id}`,
+      url: `/pages/systemModule/uploadPage/uploadPage?voucher_id=${item.id}&type=${type}`,
     })
   },
 

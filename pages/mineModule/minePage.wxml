@@ -1,12 +1,12 @@
 <view class="minePage">
   <view class="bgBox">
-    <image src="http://39.106.44.146/WULIU/mine0.png" mode="" style="width: 100%; height: 540rpx;" />
+    <image src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/mine0.png" mode="" style="width: 100%; height: 540rpx;" />
     <!-- 头像 昵称 -->
     <view class="avatarBox">
       <view class="avatarBgBox frcc">
-        <image wx:if="{{ !isLogin}}" src="http://39.106.44.146/WULIU/mine1.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" bind:tap="goLogin" />
-        <image wx:if="{{ isLogin && profile.role === 1 }}" src="http://39.106.44.146/WULIU/mine3.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" />
-        <image wx:if="{{ isLogin && profile.role === 2 }}" src="http://39.106.44.146/WULIU/mine2.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" />
+        <image wx:if="{{ !isLogin}}" src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/mine1.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" bind:tap="goLogin" />
+        <image wx:if="{{ isLogin && profile.role === 1 }}" src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/mine3.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" />
+        <image wx:if="{{ isLogin && profile.role === 2 }}" src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/mine2.png" mode="" style="width: 180rpx; height: 180rpx; border-radius: 180rpx;" />
       </view>
       <view wx:if="{{ !isLogin}}" class="nickName frcc" bind:tap="goLogin">点击登录</view>
       <view wx:if="{{ isLogin && profile.role === 1 }}" class="nickName frcc">{{ profile.screen_name }}</view>

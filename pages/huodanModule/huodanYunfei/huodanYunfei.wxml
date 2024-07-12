@@ -4,10 +4,10 @@
       <view class="hthText">{{ item.voucherCode }}</view>
       <view class="ppText">收货公司：{{ item.tplusdelivery.t_company_name }}</view>
       <view class="ppText">支付方式：{{ item.deliveryMode }}</view>
-      <view class="ppText">
+      <!-- <view class="ppText">
         运费：
         <text class="yfText">{{ item.deliveryPric || '' }}</text>
-      </view>
+      </view> -->
     </view>
     <view wx:if="{{ dataList.length === 0 }}" class="nodataBox">
       <image src="/images/systemModule/zwsj.png" mode="aspectFill" />

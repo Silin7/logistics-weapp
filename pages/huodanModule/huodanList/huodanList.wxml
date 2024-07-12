@@ -5,8 +5,9 @@
       <view class="ppText">单据编号：{{ item.voucherCode }}</view>
       <view class="ppText">单据日期：{{ item.created_at }}</view>
       <view class="btnsBox frac">
-        <view wx:if="{{ item.haveimg === 0 }}" class="uploadBtn frcc" bind:tap="goUploadPage" data-item="{{ item }}">上传图片</view>
+        <view wx:if="{{ item.haveimg === 0 }}" class="uploadBtn frcc" bind:tap="goUploadPage" data-item="{{ item }}" data-type="add">上传图片</view>
         <view wx:if="{{ item.haveimg === 1 }}" class="uploadBtn frcc" bind:tap="goViewPage" data-item="{{ item }}">查看图片</view>
+        <view wx:if="{{ item.haveimg === 1 }}" class="updateBtn frcc" bind:tap="goUploadPage" data-item="{{ item }}" data-type="update">修改图片</view>
         <view class="qzqrBtn frcc" bind:tap="goDeliveryhavesigned" data-item="{{ item }}">让收货人签字</view>
       </view>
     </view>
