@@ -2,7 +2,12 @@ import esRequest from '../../../utils/esRequest';
 
 Page({
   data: {
+    openpwd: '',
     dataList: []
+  },
+
+  onLoad: function (options) {
+    this.data.openpwd = options.openpwd
   },
 
   onShow: function () {
@@ -14,7 +19,9 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('voucherlist').then(res => {
+    esRequest('voucherlist', {
+      openpwd: this.data.openpwd,
+    }).then(res => {
       this.setData({
         dataList: res.data.data
       })

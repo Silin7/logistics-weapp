@@ -37,7 +37,7 @@ Page({
     })
   },
 
-  // 页面跳转 - 客户端
+  // 页面跳转 - 客户端 (旧)
   goLoginKhd: function () {
     if (!wx.getStorageSync('registered')) {
       wx.navigateTo({
@@ -56,6 +56,13 @@ Page({
         })
       }
     }
+  },
+
+  // 页面跳转 - 客户端
+  goHetongSearch:  function () {
+    wx.navigateTo({
+      url: '/pages/hetongModule/hetongSearch/hetongSearch',
+    })
   },
 
   // 页面跳转 - 物流端

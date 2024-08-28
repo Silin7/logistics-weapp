@@ -1,0 +1,15 @@
+<view class="purchaseLogin">
+  <view class="topBox frbc">
+    <view>
+      <view class="hyzcText">验证码</view>
+      <view class="tipsText">根据验证码检索合同</view>
+    </view>
+    <image src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/logincgs.png" mode="" style="width: 380rpx; height: 275rpx;" />
+  </view>
+  <!-- 登录卡片 -->
+  <view class="cardBox">
+    <view class="labelText">验证码</view>
+    <input value="{{ openpwd }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="openpwdInput" />
+    <view class="submitClass frcc" bind:tap="submitFunction">查询</view>
+  </view>
+</view>

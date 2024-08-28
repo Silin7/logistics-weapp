@@ -17,7 +17,8 @@
     </view>
     <!-- 登录box -->
     <view class="subBox frac">
-      <view class="subItem" bind:tap="goLoginKhd">
+    <!-- bind:tap="goLoginKhd" -->
+      <view class="subItem" bind:tap="goHetongSearch">
         <image src="/images/homeModule/homecard1.png" mode="aspectFill" class="cardBgimg" />
         <view class="subTextBox frcc">
           <image src="/images/homeModule/homeIcon1.png" mode="aspectFill" style="width: 105rpx; height: 105rpx;" />
