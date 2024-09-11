@@ -104,7 +104,7 @@ Page({
     //     icon: 'none'
     //   })
     // })
-  }
+  },
 
   // 查看大图
   // previewImage: function () {
