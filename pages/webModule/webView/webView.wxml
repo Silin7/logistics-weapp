@@ -6,6 +6,9 @@
     <cover-view wx:if="{{ signed === 1 }}" class="btnStyle" bind:tap="goHomePage">
       回到首页
     </cover-view>
+    <cover-view wx:if="{{ signed === 1 && pdfurl }}" class="btnStyle2" bind:tap="downloadPDF">
+      合同下载
+    </cover-view>
   </web-view>
   <!-- <cover-view wx:if="{{ signed === 0 }}" class="btnStyle" bind:tap="goSignPage">
     签字

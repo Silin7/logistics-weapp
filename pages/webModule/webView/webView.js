@@ -5,6 +5,7 @@ Page({
     pageType: '',
     webUrl: '',
     signed: '',
+    pdfurl: '',
   },
 
   onLoad: function (options) {
@@ -15,6 +16,9 @@ Page({
   },
 
   onShow: function () {
+    this.setData({
+      pdfurl: wx.getStorageSync('pdfurl')
+    })
     this.setData({
       webUrl: `${this.data.webUrl}?timestamp=${new Date().getTime()}`
     })
@@ -78,6 +82,42 @@ Page({
     wx.switchTab({
       url: '/pages/homeModule/homePage',
     })
-  }
+    wx.removeStorageSync('pdfurl')
+  },
 
+  // 下载PDF
+  downloadPDF: function () {
+    wx.downloadFile({
+      url: this.data.pdfurl,
+      success: function (res) {
+        wx.getFileSystemManager().saveFile({
+          tempFilePath: res.tempFilePath,
+          success: (res2) => {
+            setTimeout(() => {
+              wx.openDocument({
+                filePath: res2.savedFilePath,
+                showMenu: true,
+                fileType: 'pdf',
+                success: () => {}
+              })
+            }, 1000)
+          },
+          fail: (fail) => {
+            console.log(fail)
+            wx.showToast({
+              title: '下载失败',
+              icon: 'none'
+            })
+          }
+        })
+      },
+      fail: function (fail) {
+        console.log(fail)
+        wx.showToast({
+          title: '下载失败',
+          icon: 'none'
+        })
+      }
+    })
+  }
 })

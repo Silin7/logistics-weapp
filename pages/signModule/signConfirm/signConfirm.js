@@ -58,7 +58,8 @@ Page({
         voucher_id: hetong.id || '',
       },
       success: function (res) {
-        const data = JSON.parse(res.data)
+        const response = JSON.parse(res.data)
+        wx.setStorageSync('pdfurl', response.data.pdfurl)
         wx.hideLoading()
         wx.showToast({
           title: '操作成功',
