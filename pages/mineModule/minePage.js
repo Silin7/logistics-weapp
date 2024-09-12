@@ -7,6 +7,7 @@ Page({
   data: {
     isLogin: false,
     profile: {},
+    technicalsupport: '15863505017',
   },
 
   onShow: function () {
@@ -56,7 +57,8 @@ Page({
     })
     esRequest('profile').then(res => {
       this.setData({
-        profile: res.data.profile
+        profile: res.data.profile,
+        technicalsupport: res.data.technicalsupport,
       })
       wx.setStorageSync('profile', res.data.profile)
       wx.hideLoading()
@@ -100,6 +102,13 @@ Page({
   goCarList: function () {
     wx.navigateTo({
       url: '/pages/carModule/carList/carList',
+    })
+  },
+
+  // 拨打电话
+  makePhoneCall: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.technicalsupport,
     })
   },
 })
