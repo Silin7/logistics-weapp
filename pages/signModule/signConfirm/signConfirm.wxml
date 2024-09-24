@@ -17,7 +17,7 @@
     <view class="henggang2"></view>
     <view class="frsc">
       <image src="/images/signModule/red_right.png" mode="" style="width: 30rpx; height: 30rpx;" />
-      <view class="tipsText">我声明我已经收到本单据所有货物</view>
+      <view class="tipsText">我声明我的签字具有法律效力</view>
     </view>
     <view class="qqzBtn frcc" bind:tap="goSignPage">重签</view>
     <view class="yqzBtn frcc" bind:tap="voucherSavesign">已签好 确定提交</view>
