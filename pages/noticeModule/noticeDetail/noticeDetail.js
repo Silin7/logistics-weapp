@@ -20,7 +20,7 @@ Page({
     })
     esRequest('article', '', this.data.id).then(res => {
       this.data.noticeForm = res.data.data
-      this.data.noticeForm.contents = this.data.noticeForm.contents.replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
+      this.data.noticeForm.contents = this.data.noticeForm.contents.replace(/\<img style="/gi, '<img style="max-width:100%; height:auto; ')
       this.setData({
         noticeForm: this.data.noticeForm
       })
