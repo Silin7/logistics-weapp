@@ -8,7 +8,7 @@
       <view class="subText ml20">{{noticeForm.created_at}}</view>
     </view>
     <view class="henggang"></view>
-    <view class="richTextBox">
+    <view class="richTextBox" bind:tap="richTextClick">
       <rich-text nodes="{{noticeForm.contents}}" />
     </view>
   </view>
