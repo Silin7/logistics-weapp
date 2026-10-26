@@ -6,15 +6,11 @@ import esRequest from '../../../utils/esRequest';
 Page({
   data: {
     userPhone: '',
-    verificationCode: '',
-    verificationCode2: '',
     numberplate: '',
     name: '',
     driverLicenseCode: '',
     license_page: '',
     license_subpage: '',
-    verificationTimer: null,
-    countdown: 60,
   },
 
   onLoad: function () {
@@ -25,10 +21,38 @@ Page({
 
   },
 
-  // 手机号 - input
-  userPhoneInput: function (e) {
-    this.setData({
-      userPhone: e.detail.value
+  // 微信手机号快速验证
+  getPhoneNumber: function (e) {
+    console.log('e', e);
+    if (e.detail.errMsg !== 'getPhoneNumber:ok' || !e.detail.code) {
+      return
+    }
+    wx.showLoading({
+      title: '加载中',
+    })
+    esRequest('getuserphonenumber', {
+      code: e.detail.code
+    }).then((res) => {
+      const phoneInfo = res.data.phone_info || {}
+      const userPhone = res.data.phone || phoneInfo.phoneNumber || phoneInfo.purePhoneNumber || ''
+      if (!userPhone) {
+        wx.hideLoading()
+        wx.showToast({
+          title: '获取手机号失败',
+          icon: 'none'
+        })
+        return
+      }
+      this.setData({
+        userPhone
+      })
+      wx.hideLoading()
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: err.message || '获取手机号失败',
+        icon: 'none'
+      })
     })
   },
 
@@ -37,64 +61,6 @@ Page({
     this.setData({
       name: e.detail.value
     })
-  },
-
-  // 获取手机验证码（企业负责人）
-  getcompanyphonecodeFunction: function () {
-    if (!this.data.userPhone) {
-      wx.showToast({
-        title: '请输入手机号',
-        icon: 'none'
-      })
-      return
-    }
-    // let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
-    // if (!phoneReg.test(this.data.userPhone)) {
-    //   wx.showToast({
-    //     title: '手机号格式错误',
-    //     icon: 'none'
-    //   })
-    //   return
-    // }
-    wx.showLoading({
-      title: '加载中',
-    })
-    this.countdownChange()
-    esRequest('getphonecode', {
-      phone: this.data.userPhone
-    }).then((res) => {
-      this.setData({
-        verificationCode: res.data.code,
-      })
-      wx.hideLoading()
-    }).catch((err) => {
-      wx.hideLoading()
-      wx.showToast({
-        title: err.message,
-        icon: 'none'
-      })
-    })
-  },
-
-  // 验证码 - input
-  verificationInput: function (e) {
-    this.setData({
-      verificationCode2: e.detail.value
-    })
-  },
-
-  // 验证码倒计时
-  countdownChange: function () {
-    this.data.verificationTimer = setInterval(() => {
-      this.data.countdown -= 1
-      this.setData({
-        countdown: this.data.countdown
-      })
-      // 清除定时器
-      if (this.data.countdown === 0) {
-        clearInterval(this.data.verificationTimer)
-      }
-    }, 1000)
   },
 
   // 车牌号 - input
@@ -175,36 +141,14 @@ Page({
     let _this = this
     if (!this.data.userPhone) {
       wx.showToast({
-        title: '请输入手机号',
+        title: '请获取手机号',
         icon: 'none'
       });
       return
     }
-    // let phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
-    // if (!phoneReg.test(this.data.userPhone)) {
-    //   wx.showToast({
-    //     title: '手机号格式错误',
-    //     icon: 'none'
-    //   })
-    //   return
-    // }
     if (!this.data.name) {
       wx.showToast({
         title: '请输入姓名',
-        icon: 'none'
-      });
-      return
-    }
-    if (!this.data.verificationCode2) {
-      wx.showToast({
-        title: '请输入验证码',
-        icon: 'none'
-      });
-      return
-    }
-    if (this.data.verificationCode2 != this.data.verificationCode) {
-      wx.showToast({
-        title: '验证码错误',
         icon: 'none'
       });
       return

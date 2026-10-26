@@ -24,10 +24,10 @@ let systemRequest = {
     apiName: '/article',
     name: '文章详细'
   },
-  getphonecode: {
-    apiMethod: 'GET',
-    apiName: '/getphonecode',
-    name: '获取手机验证码（物流司机）'
+  getuserphonenumber: {
+    apiMethod: 'POST',
+    apiName: '/getuserphonenumber',
+    name: '微信手机号快速验证'
   },
   uploadimgtoreg: {
     apiMethod: 'POST',
@@ -38,11 +38,6 @@ let systemRequest = {
     apiMethod: 'POST',
     apiName: '/driverregister',
     name: '物流司机注册'
-  },
-  getcompanyphonecode: {
-    apiMethod: 'GET',
-    apiName: '/getcompanyphonecode',
-    name: '获取手机验证码（企业负责人）'
   },
   directorregister: {
     apiMethod: 'POST',
