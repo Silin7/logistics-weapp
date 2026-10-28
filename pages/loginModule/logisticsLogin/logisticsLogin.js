@@ -153,21 +153,26 @@ Page({
       });
       return
     }
-    if (!this.data.numberplate) {
+    let numberplate = (this.data.numberplate || '').trim().toUpperCase()
+    if (!numberplate) {
       wx.showToast({
         title: '请输入车牌号',
         icon: 'none'
       });
       return
     }
-    let carNumReg = /^[京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼川贵云渝藏陕甘青宁新]{1}[ABCDEFGHJKLMNOPQRSTUVWXY]{1}[0-9A-Z]{5}$/u
-    if (!carNumReg.test(this.data.numberplate)) {
+    // 车牌号校验正则：支持普通汽车(含挂车/教练车/警车/港澳车/领馆车等7位)、新能源汽车(8位)、使馆车、武警车、军车、应急救援车等
+    let carNumReg = /^(([京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼川贵云渝藏陕甘青宁新][A-Z](([A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳领])|([A-HJ-NP-Z0-9]{6})))|使[0-9]{6}|WJ[京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼川贵云渝藏陕甘青宁新]?[A-HJ-NP-Z0-9]{5,7}|[A-Z]{2}[0-9]{5}|([京津冀晋蒙辽吉黑沪苏浙皖闽赣鲁豫鄂湘粤桂琼川贵云渝藏陕甘青宁新]?[A-HJ-NP-Z0-9]{4,6}应急|应急[A-HJ-NP-Z0-9]{4,6}))$/i
+    if (!carNumReg.test(numberplate)) {
       wx.showToast({
         title: '车牌号格式错误',
         icon: 'none'
       })
       return
     }
+    this.setData({
+      numberplate: numberplate
+    })
     if (!this.data.license_page) {
       wx.showToast({
         title: '请输入驾驶证正本',
